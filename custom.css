@@ -405,14 +405,7 @@ footer { background-color: #ffffff !important; }
    =========================================================== */
 
 
-/* All HOME page content below the shared header uses Libre Caslon. */
-.bh-home-redesign,
-.bh-home-redesign :is(h1,h2,h3,h4,h5,h6,p,span,a,button,input,textarea,select,label) {
-  font-family: 'Libre Caslon Text', Georgia, serif;
-}
-.bh-home-redesign :is(h1,h2,h3,h4,h5,h6) {
-  font-family: 'Libre Caslon Display', 'Libre Caslon Text', Georgia, serif;
-}
+
 
 /* Hide the decorative cream strip on HOME only.
    IMPORTANT: Do not target header > div:last-child because the
@@ -667,26 +660,7 @@ body:has(.bh-home-redesign) header > div.w-full.h-3 {
 }
 
 
-/* ============================================================
-   BLUE HUES HOME — REVISION 06: CONSISTENT LIBRE CASLON
-   Applies to the entire homepage, including shared header/footer
-   ONLY while .bh-home-redesign is present. Does not change other pages.
-   Overrides Tailwind font utility classes, including font-times,
-   font-playfair, font-bodoni, font-noto-extra-condensed and font-sans.
-   ============================================================ */
 
-body:has(.bh-home-redesign),
-body:has(.bh-home-redesign) :is(
-  header, main, footer, nav, section, div, article, aside, form,
-  h1, h2, h3, h4, h5, h6, p, span, a, button, input,
-  textarea, select, option, label, strong, em, small, li,
-  blockquote, figcaption
-) {
-  font-family: 'Libre Caslon Text', Georgia, serif !important;
-}
-
-/* Preserve weight, italics, sizing and visual hierarchy established
-   elsewhere in the original CSS. Only the font family is overridden. */
 
 
 /* ============================================================
@@ -886,33 +860,96 @@ body:has(.bh-home-redesign) :is(
 }
 
 
-/* ==========================================
-   BLUE HUES — V11
-   HOMEPAGE CONTENT TYPOGRAPHY
-   Header and footer excluded
-   ========================================== */
-
-main:has(.bh-home-redesign),
-main:has(.bh-home-redesign) * {
-    font-family: 'Libre Caslon Text', Georgia, serif !important;
-}
-
-
-
-/* ==========================================
-   BLUE HUES — CASLON TYPOGRAPHY REFINEMENT
-   Homepage content only
-   ========================================== */
-
-/* All homepage content */
+/* ============================================================
+   BLUE HUES — V12 HOMEPAGE TYPOGRAPHY AND ARTISANAL EMPHASIS
+   Scope: homepage MAIN ONLY. Shared header/footer remain unchanged.
+   ============================================================ */
 body:has(.bh-home-redesign) main,
 body:has(.bh-home-redesign) main * {
-    font-family: 'Libre Caslon Text', Georgia, serif !important;
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
 }
-
-/* Major headings */
 body:has(.bh-home-redesign) main h1,
 body:has(.bh-home-redesign) main h2,
-body:has(.bh-home-redesign) main h3 {
-    font-family: 'Libre Caslon Display', Georgia, serif !important;
+body:has(.bh-home-redesign) main h3,
+body:has(.bh-home-redesign) main h4,
+body:has(.bh-home-redesign) main h5,
+body:has(.bh-home-redesign) main h6 {
+  font-family: 'Libre Caslon Display', Georgia, serif !important;
+}
+/* Editorial headline and paragraph styles keep their established sizes
+   and intentional italics; only font families are standardized. */
+body:has(.bh-home-redesign) main .bh-artisanal-copy {
+  color: #3f4650 !important;
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  font-size: clamp(14px, 1.05vw, 16px);
+  line-height: 1.8;
+  letter-spacing: .01em;
+}
+body:has(.bh-home-redesign) main .bh-artisanal-copy .bh-highlight-word {
+  color: #4f7d78 !important;
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+}
+
+
+/* ===============================================================
+   V13 — FINAL CONTENT TYPOGRAPHY + ARTISANAL UPPERCASE EMPHASIS
+   Only homepage MAIN: header, footer and other routes unaffected.
+   Keep previously approved layouts, dimensions, imagery and colors.
+   =============================================================== */
+
+/* The homepage content uses the same upright Caslon visual language. */
+body:has(.bh-home-redesign) main .bh-home-redesign h1,
+body:has(.bh-home-redesign) main .bh-home-redesign h2,
+body:has(.bh-home-redesign) main .bh-home-redesign h3,
+body:has(.bh-home-redesign) main .bh-home-redesign h4,
+body:has(.bh-home-redesign) main .bh-home-redesign h5,
+body:has(.bh-home-redesign) main .bh-home-redesign h6 {
+  font-family: 'Libre Caslon Display', Georgia, serif !important;
+  font-style: normal !important;
+}
+body:has(.bh-home-redesign) main .bh-home-redesign p,
+body:has(.bh-home-redesign) main .bh-home-redesign blockquote,
+body:has(.bh-home-redesign) main .bh-home-redesign em,
+body:has(.bh-home-redesign) main .bh-home-redesign .italic,
+body:has(.bh-home-redesign) main .bh-home-redesign .trending-name {
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  font-style: normal !important;
+}
+
+/* Keep Trending Stones' two-word display-heading hierarchy,
+   but do not italicize the emphasized word. */
+body:has(.bh-home-redesign) main .bh-home-redesign .trending-header em {
+  font-family: 'Libre Caslon Display', Georgia, serif !important;
+  font-style: normal !important;
+}
+
+/* Preserve the original all-caps Artisanal panel with new highlights. */
+body:has(.bh-home-redesign) main .bh-home-redesign .bh-artisanal-copy {
+  color: #3f4650 !important;
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  font-size: clamp(13px, 1.05vw, 15px) !important;
+  line-height: 1.85 !important;
+  letter-spacing: .075em !important;
+}
+body:has(.bh-home-redesign) main .bh-home-redesign .bh-artisanal-copy .bh-highlight-word {
+  color: #4f7d78 !important;
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+}
+
+/* Newsletter white lettering is intentional; do not change contrast. */
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 .max-w-4xl p {
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  font-style: normal !important;
+  color: #fff !important;
 }
