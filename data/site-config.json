@@ -1,0 +1,41 @@
+{
+  "heroBannerImage": "/hero-mining.jpg",
+  "heroTagline": "CEYLON GEMSTONES · SRI LANKA",
+  "heroTitle": "Blue Hues",
+  "heroDescription1": "Sustainable gemstone mining and selling from the heart of Sri Lanka.",
+  "heroDescription2": "Preserving heritage, protecting nature, and honouring artisanal craftsmanship.",
+  "heroVideos": [
+    {
+      "id": "vid-1",
+      "label": "01",
+      "url": "/videos/hero/gem1.mp4",
+      "title": "Ceylon Royal Blue Sapphire"
+    },
+    {
+      "id": "vid-2",
+      "label": "02",
+      "url": "/videos/hero/gem2.mp4",
+      "title": "Natural Vivid Ruby"
+    },
+    {
+      "id": "vid-3",
+      "label": "03",
+      "url": "/videos/hero/gem3.mp4",
+      "title": "Natural Padparadscha Sapphire"
+    },
+    {
+      "id": "vid-4",
+      "label": "04",
+      "url": "/videos/hero/gem4.mp4",
+      "title": "Cornflower Blue Sapphire"
+    }
+  ],
+  "editorialIntroImage": "/gems/blue_sapphire.jpg",
+  "categoryBlueSapphireImage": "/gems/blue_sapphire.jpg",
+  "categoryRubiesImage": "/gems/ruby.jpg",
+  "categorySemiPreciousImage": "/gems/semi_precious.jpg",
+  "aboutBannerImage": "/sustainability.jpg",
+  "contactPhone": "+94 72 355 3882",
+  "contactEmail": "sales-us@ceybluehues.com",
+  "whatsappNumber": "94723553882"
+}

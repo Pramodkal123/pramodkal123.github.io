@@ -1,0 +1,10 @@
+# Never serve credentials / helper files directly.
+<FilesMatch "^(admin-credentials|_guard)\.php$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>

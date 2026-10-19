@@ -1,0 +1,23 @@
+BLUEHUES GEMSTONES — MANUAL HTML/CSS EDITING GUIDE
+
+SECTION BACKGROUNDS
+- All <section> elements currently use bg1.png as the example background.
+- Put bg1.png in the website root folder (the same folder as index.html).
+- The image file is not included in this ZIP; add your own bg1.png file.
+- Background settings are in custom.css.
+
+TO GIVE ONE SECTION A DIFFERENT BACKGROUND LATER
+1. Open the relevant HTML file in VS Code.
+2. Find the <section ...> you want to change.
+3. Add a class named section-bg-2 to its existing class list. Example:
+   <section class="py-12 section-bg-2">
+   Do not delete any classes that are already there; just add section-bg-2.
+4. Put bg2.png in the website root folder.
+5. In custom.css, edit the rule for section.section-bg-2 and set its URL to /bg2.png.
+6. For another image, use section-bg-3 and /bg3.png, or add another matching rule.
+
+OTHER MANUAL EDITING
+- HTML files control page content and section structure.
+- custom.css controls the shared section background behavior.
+- Keep existing JavaScript and existing HTML classes unless you intend to change their behavior.
+- Run the site with VS Code Live Server to preview your changes.

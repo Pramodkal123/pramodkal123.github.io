@@ -1,0 +1,104 @@
+# ==============================================================================
+# Bluehues Ceylon - LiteSpeed / Apache / cPanel / Hostinger Production Config
+# ==============================================================================
+
+# Disable directory browsing
+Options -Indexes +FollowSymLinks
+DirectoryIndex index.html index.php index.htm
+
+# 1. MIME Types (Guarantees CSS, JS, Fonts, Images & Videos load correctly)
+<IfModule mod_mime.c>
+  AddType text/css .css
+  AddType application/javascript .js .mjs
+  AddType application/json .json
+  AddType image/svg+xml .svg
+  AddType image/webp .webp
+  AddType image/png .png
+  AddType image/jpeg .jpg .jpeg
+  AddType image/x-icon .ico
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+  AddType font/ttf .ttf
+  AddType video/mp4 .mp4
+  AddType video/webm .webm
+</IfModule>
+
+# 2. GZIP Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json image/svg+xml
+</IfModule>
+
+# 3. Headers, CORS & Cache Controls
+<IfModule mod_headers.c>
+  # Dynamic PHP endpoints & JSON data: NEVER CACHE (Live multi-device database)
+  <FilesMatch "\.(php|json)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With, Cache-Control, Pragma, Expires"
+  </FilesMatch>
+
+  # Static assets (CSS, JS, Fonts, Images): Cache efficiently
+  <FilesMatch "\.(js|css|woff2|woff|ttf|ico|png|jpg|jpeg|webp|svg|mp4|webm)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+# 4. Clean Routing for Next.js Static Export & PHP Endpoints
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 4a. Allow all real files and directories to load directly without modification
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 4b. Explicit static assets bypass (prevents any accidental rewriting)
+  RewriteRule ^_next/ - [L]
+  RewriteRule ^assets/ - [L]
+  RewriteRule ^gems/ - [L]
+  RewriteRule ^uploads/ - [L]
+  RewriteRule ^data/ - [L]
+  RewriteRule ^videos/ - [L]
+  RewriteRule ^api/ - [L]
+
+  # 4c. Clean API routing to PHP backend scripts
+  RewriteRule ^api/gemstones/?$ api/gemstones.php [L,QSA]
+  RewriteRule ^api/inquiries/?$ api/inquiries.php [L,QSA]
+  RewriteRule ^api/site-config/?$ api/site-config.php [L,QSA]
+  RewriteRule ^api/upload/?$ api/upload.php [L,QSA]
+  RewriteRule ^api/auth/?$ api/auth.php [L,QSA]
+  RewriteRule ^api/backup/?$ api/backup.php [L,QSA]
+
+  # 4d. Explicit Route Index Fallbacks
+  RewriteRule ^admin/?$ admin/index.html [L]
+  RewriteRule ^admin/bluehues/.*$ admin/index.html [L]
+  RewriteRule ^login/?$ login/index.html [L]
+  RewriteRule ^about/?$ about/index.html [L]
+  RewriteRule ^contact/?$ contact/index.html [L]
+  RewriteRule ^gemstones/?$ gemstones/index.html [L]
+  RewriteRule ^blue-sapphire/?$ blue-sapphire/index.html [L]
+  RewriteRule ^rubies/?$ rubies/index.html [L]
+  RewriteRule ^semi-precious/?$ semi-precious/index.html [L]
+  RewriteRule ^other-gems/?$ other-gems/index.html [L]
+  RewriteRule ^sustainability/?$ sustainability/index.html [L]
+  RewriteRule ^our-story/?$ our-story/index.html [L]
+
+  # 4e. Dynamic Gemstone Detail page fallback
+  RewriteCond %{REQUEST_URI} ^/gemstones/[^/]+/?$
+  RewriteRule ^gemstones/[^/]+/?$ gemstones/natural-royal-blue-sapphire-ceylon/index.html [L,QSA]
+
+  # 4f. Fallback for any subdirectory index.html
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.*)/?$ $1/index.html [L]
+
+  # 4g. Fallback for any flat HTML file
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.*)/?$ $1.html [L]
+</IfModule>
+
+# Custom 404 Error Page
+ErrorDocument 404 /404.html
