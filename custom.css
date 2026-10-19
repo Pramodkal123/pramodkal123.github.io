@@ -884,3 +884,35 @@ body:has(.bh-home-redesign) :is(
   margin-left: auto;
   margin-right: auto;
 }
+
+
+/* ==========================================
+   BLUE HUES — V11
+   HOMEPAGE CONTENT TYPOGRAPHY
+   Header and footer excluded
+   ========================================== */
+
+main:has(.bh-home-redesign),
+main:has(.bh-home-redesign) * {
+    font-family: 'Libre Caslon Text', Georgia, serif !important;
+}
+
+
+
+/* ==========================================
+   BLUE HUES — CASLON TYPOGRAPHY REFINEMENT
+   Homepage content only
+   ========================================== */
+
+/* All homepage content */
+body:has(.bh-home-redesign) main,
+body:has(.bh-home-redesign) main * {
+    font-family: 'Libre Caslon Text', Georgia, serif !important;
+}
+
+/* Major headings */
+body:has(.bh-home-redesign) main h1,
+body:has(.bh-home-redesign) main h2,
+body:has(.bh-home-redesign) main h3 {
+    font-family: 'Libre Caslon Display', Georgia, serif !important;
+}
