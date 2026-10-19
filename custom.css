@@ -971,3 +971,155 @@ footer a[href="/contact/"].rounded-full,
 footer a[href="/contact"].rounded-full {
   display: none !important;
 }
+
+
+/* ==============================================================
+   V16 — KEEP CONNECTED FULL-WIDTH SPLIT COMPOSITION
+   Homepage only. Uses the existing newsletter React elements;
+   no HTML/JS or submission-handler edits.
+   Left: original blue-sky photo with navy readability gradient.
+   Right: /keep-connected-gems.jpeg
+   ============================================================== */
+
+/* Undo the newsletter-only fixed-width wrapper, not other page widths. */
+body:has(.bh-home-redesign) main .bh-home-redesign > section:has(.box-bg-32) {
+  width: 100% !important;
+  max-width: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #fff !important;
+}
+body:has(.bh-home-redesign) main .bh-home-redesign > section:has(.box-bg-32) > div {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* The left content remains in the original interactive DOM elements. */
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 {
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 475px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  padding: 64px clamp(32px, 6vw, 116px) !important;
+  background-image: url('/bg32.png') !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-color: #123a60 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 20px !important;
+  text-align: left !important;
+  isolation: isolate;
+  overflow: hidden !important;
+}
+
+/* Darkened SKY on the left; transitions into the leaf photography. */
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    rgba(3, 21, 46, .82) 0%,
+    rgba(5, 30, 62, .74) 35%,
+    rgba(7, 37, 68, .64) 54%,
+    rgba(7, 37, 68, .18) 75%,
+    rgba(7, 37, 68, .04) 100%);
+}
+/* Dedicated gemstone photography on the right, with a soft blended edge. */
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 47%;
+  background-image: url('/keep-connected-gems.jpeg');
+  background-size: cover;
+  background-position: 50% 48%;
+  background-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 24%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 24%);
+  pointer-events: none;
+}
+/* Place the existing text and signup form in a left-side content column. */
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 > .max-w-4xl,
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 > .max-w-md {
+  position: relative !important;
+  z-index: 2 !important;
+  width: min(100%, 650px) !important;
+  max-width: 650px !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 > .max-w-4xl {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 h2 {
+  font-size: clamp(38px, 3.8vw, 62px) !important;
+  line-height: 1.12 !important;
+  text-align: left !important;
+  margin: 0 !important;
+}
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 .max-w-4xl p {
+  text-align: left !important;
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: 650px !important;
+  font-size: clamp(15px, 1.15vw, 19px) !important;
+  font-style: normal !important;
+  line-height: 1.65 !important;
+  color: #fff !important;
+}
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 > .max-w-md {
+  padding-top: 8px !important;
+}
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 form {
+  width: 100% !important;
+  min-height: 55px !important;
+}
+
+/* Mobile: keep every element readable, with the gemstone image below. */
+@media (max-width: 767px) {
+  body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 {
+    min-height: 710px !important;
+    padding: 48px 24px 310px !important;
+    gap: 18px !important;
+    justify-content: flex-start !important;
+  }
+  body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32::before {
+    background: linear-gradient(to bottom,
+      rgba(3, 21, 46, .86) 0%,
+      rgba(5, 30, 62, .72) 53%,
+      rgba(7, 37, 68, .2) 100%);
+  }
+  body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32::after {
+    width: 100%;
+    height: 305px;
+    top: auto;
+    left: 0;
+    bottom: 0;
+    background-position: center 53%;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 21%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 21%);
+  }
+  body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 h2 {
+    font-size: clamp(35px, 9vw, 48px) !important;
+  }
+  body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 .max-w-4xl p {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+  }
+}
