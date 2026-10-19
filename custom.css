@@ -1224,3 +1224,52 @@ body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 .max-w-4xl p:empty
     margin-bottom: 36px !important;
   }
 }
+
+
+/* ============================================================
+   V19 — KEEP CONNECTED: COMPACT HEIGHT + NATURAL GEM COLORS
+   Homepage newsletter ONLY. Preserves V18 spacing and divider.
+   ============================================================ */
+@media (min-width: 768px) {
+  body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 {
+    /* 75px removed from each end of V18's full-viewport height. */
+    min-height: max(560px, calc(100svh - 150px)) !important;
+    height: auto !important;
+    padding-top: 36px !important;
+    padding-bottom: 36px !important;
+    justify-content: center !important;
+  }
+}
+/* A localized fade behind copy, not an all-over tint over the leaf. */
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32::before {
+  inset: 0 auto 0 0 !important;
+  width: 64% !important;
+  background: linear-gradient(to right,
+    rgba(3, 21, 46, .83) 0%,
+    rgba(5, 28, 58, .78) 50%,
+    rgba(7, 35, 68, .46) 77%,
+    rgba(7, 35, 68, 0) 100%) !important;
+}
+/* The image remains fully saturated, vertically centered. */
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32::after {
+  top: 0 !important;
+  bottom: 0 !important;
+  height: 100% !important;
+  background-position: center center !important;
+  opacity: 1 !important;
+}
+@media (max-width: 767px) {
+  /* Keep the previously approved mobile stacked layout. */
+  body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32::before {
+    width: 100% !important;
+    background: linear-gradient(to bottom,
+      rgba(3, 21, 46, .86) 0%,
+      rgba(5, 30, 62, .72) 53%,
+      rgba(7, 37, 68, .05) 100%) !important;
+  }
+  body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32::after {
+    top: auto !important;
+    height: 305px !important;
+    background-position: center 53% !important;
+  }
+}
