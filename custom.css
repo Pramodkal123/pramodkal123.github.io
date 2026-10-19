@@ -953,3 +953,21 @@ body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 .max-w-4xl p {
   font-style: normal !important;
   color: #fff !important;
 }
+
+/* ==============================================
+   BLUE HUES — V15 GLOBAL FOOTER CLEANUP
+   Applied to every page, including initial static HTML.
+   ============================================== */
+
+/* The old static HTML marked Sustainability as active everywhere. */
+footer a[href="/sustainability/"],
+footer a[href="/sustainability"] {
+  color: inherit !important;
+  font-weight: inherit !important;
+}
+
+/* Hide the former consultation CTA in pre-rendered HTML as well. */
+footer a[href="/contact/"].rounded-full,
+footer a[href="/contact"].rounded-full {
+  display: none !important;
+}
