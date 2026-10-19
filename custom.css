@@ -1123,3 +1123,104 @@ body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 form {
     line-height: 1.55 !important;
   }
 }
+
+
+/* ============================================================
+   V17 — KEEP CONNECTED: HERO-SCALE HEIGHT, TYPE EMPHASIS & SPACING
+   Homepage newsletter only. Header/footer and all other pages excluded.
+   Builds on the established V16 split sky / gemstone composition.
+   ============================================================ */
+@media (min-width: 768px) {
+  body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 {
+    min-height: 100vh !important;
+    min-height: 100svh !important;
+    height: auto !important;
+    padding-top: 70px !important;
+    padding-bottom: 70px !important;
+    justify-content: center !important;
+  }
+}
+/* Keep visual centering while applying deliberate 20px extra breathing room. */
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 {
+  gap: 0 !important;
+}
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 > .max-w-4xl {
+  gap: 0 !important;
+  align-items: flex-start !important;
+}
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 18px !important;
+  margin-bottom: 20px !important;
+}
+/* Short, left-aligned gold underline immediately beneath title. */
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 h2::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100px;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  background: #f0c50b;
+  border-radius: 3px;
+}
+/* Paragraph remains upright; emphasize only the three selected phrases. */
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 .max-w-4xl p {
+  font-style: normal !important;
+  font-weight: 400 !important;
+  margin-bottom: 20px !important;
+}
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 .bh-newsletter-emphasis {
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  color: inherit !important;
+}
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 > .max-w-md {
+  padding-top: 0 !important;
+}
+@media (max-width: 767px) {
+  body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 {
+    min-height: 760px !important;
+    height: auto !important;
+    padding-top: 52px !important;
+    padding-bottom: 320px !important;
+    justify-content: flex-start !important;
+  }
+  body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 h2::after {
+    width: 80px;
+  }
+}
+
+
+/* ============================================================
+   V18 — KEEP CONNECTED: EXTRA VERTICAL SPACING + BOTTOM DIVIDER
+   Homepage newsletter only; preserve hero, footer, and all other sections.
+   ============================================================ */
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 {
+  border: 0 !important;
+  border-bottom: 15px solid #858a90 !important;
+}
+/* Previous 20px spacing + 35px = 55px after heading. */
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 h2 {
+  margin-bottom: 55px !important;
+}
+/* Increase space before the form without adding spacing to the empty placeholder paragraph. */
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 .max-w-4xl p:not(:empty) {
+  margin-bottom: 55px !important;
+}
+body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 .max-w-4xl p:empty {
+  display: none !important;
+  margin: 0 !important;
+}
+/* Prevent overspacing on narrow screens. */
+@media (max-width: 767px) {
+  body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 h2 {
+    margin-bottom: 36px !important;
+  }
+  body:has(.bh-home-redesign) main .bh-home-redesign .box-bg-32 .max-w-4xl p:not(:empty) {
+    margin-bottom: 36px !important;
+  }
+}
