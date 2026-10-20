@@ -1,0 +1,1 @@
+About V03: Restore original company paragraphs INSIDE the overlay card; update objectives with exact provided two paragraphs; shrink mining gallery; crop Genesis chart blank space. Extract preserving paths. Homepage and shared layout untouched.

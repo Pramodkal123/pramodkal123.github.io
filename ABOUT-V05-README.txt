@@ -1,0 +1,1 @@
+V05 replaces About Our Company gallery markup with exact Home Artisanal gallery structure, preserving original company paragraphs in the overlay card. Files are synchronized. Replace preserving paths. No homepage edits.

@@ -1306,7 +1306,7 @@ body:has(.bh-home-redesign) main .bh-home-redesign > section:has(.box-bg-32)::af
   width: 100%;
   height: 38px; /* 2.5 × previous 15px line (rounded) */
   margin-top: 24px; /* visible white gap below newsletter */
-  background-color: #d9dde1;
+  background-color: #d1cfcf;
   border: 0;
   pointer-events: none;
 }
@@ -1319,4 +1319,388 @@ body:has(.bh-home-redesign) main .bh-home-redesign > section:has(.box-bg-32) {
 body:has(.bh-home-redesign) main .bh-home-redesign > section:has(.box-bg-32)::after {
   height: 57px; /* 1.5 × V21's 38px */
   margin-top: 24px;
+}
+
+
+/* ==============================================================
+   BLUE HUES ABOUT — V01 EDITORIAL REDESIGN
+   Only .bh-about-redesign; shared header/footer and home unchanged.
+   =============================================================== */
+.bh-about-redesign {--bh-about-blue:#155a92;--bh-about-teal:#4f7d78;--bh-about-gold:#f0c50b;color:#3f4650;background:#fff;font-family:'Libre Caslon Text',Georgia,serif;}
+.bh-about-redesign *{box-sizing:border-box;}
+.bh-about-redesign section{background-image:none !important;background-repeat:initial !important;background-size:initial !important;background-position:initial !important;}
+.bh-about-redesign .bh-about-container{width:min(1240px,calc(100% - 48px));margin-inline:auto;}
+.bh-about-redesign h1,.bh-about-redesign h2{font-family:'Libre Caslon Display',Georgia,serif !important;font-style:normal !important;font-weight:400 !important;color:var(--bh-about-blue);letter-spacing:-.025em;line-height:1.12;margin:0;}
+.bh-about-redesign h1{font-size:clamp(42px,4.4vw,66px);}
+.bh-about-redesign h2{font-size:clamp(32px,3.4vw,51px);}
+.bh-about-redesign p{font-family:'Libre Caslon Text',Georgia,serif !important;font-style:normal !important;font-weight:400;line-height:1.63;margin:0;}
+.bh-about-redesign .bh-about-rule{width:78px;height:3px;margin:13px 0 26px;background:var(--bh-about-gold);border-radius:3px;}
+.bh-about-redesign .bh-about-rule-center{margin-inline:auto;}
+.bh-about-redesign .bh-about-accent{color:var(--bh-about-teal);font-weight:400;}
+.bh-about-redesign .bh-about-intro{padding:248px 0 44px;text-align:center;background:#f3f7fc !important;}
+.bh-about-redesign .bh-about-company{padding:32px 0 110px;background:#f3f7fc !important;}
+.bh-about-redesign .bh-about-company-stage{position:relative;min-height:420px;display:flex;align-items:center;justify-content:flex-end;margin-top:10px;}
+.bh-about-redesign .bh-about-company-gallery{width:79%;height:425px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:9px;border-radius:20px;background:rgba(255,255,255,.45);box-shadow:0 10px 30px rgba(19,44,64,.12);}
+.bh-about-redesign .bh-about-company-gallery img{width:100%;height:100%;min-width:0;object-fit:cover;border-radius:13px;}
+.bh-about-redesign .bh-about-company-card{position:absolute;left:0;top:50%;transform:translateY(-50%);width:39%;padding:38px 38px;background:#fff;border-radius:19px;box-shadow:0 16px 40px rgba(23,41,60,.12);}
+.bh-about-redesign .bh-about-company-card p{text-transform:uppercase;letter-spacing:.055em;font-size:clamp(13px,1.02vw,16px);line-height:1.62;color:#404954;}
+.bh-about-redesign .bh-about-heritage,.bh-about-redesign .bh-about-preserving{padding:85px 0;background:#fff !important;}
+.bh-about-redesign .bh-about-two-columns{display:grid;grid-template-columns:1fr 1fr;gap:clamp(38px,5vw,74px);align-items:center;}
+.bh-about-redesign .bh-about-gem-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;align-content:center;}
+.bh-about-redesign .bh-about-gem-grid img{width:100%;height:230px;object-fit:cover;border-radius:14px;box-shadow:0 9px 25px rgba(24,41,58,.13);}
+.bh-about-redesign .bh-about-gem-grid img:nth-child(3){grid-column:1/-1;justify-self:center;width:70%;height:235px;}
+.bh-about-redesign .bh-about-copy p{font-size:clamp(16px,1.25vw,20px);margin:0 0 22px;color:#3c4651;}
+.bh-about-redesign .bh-about-exceptional{padding:0 !important;background:#fff !important;}
+.bh-about-redesign .bh-about-exceptional-banner{min-height:390px;display:flex;align-items:center;background:#123b61 url('/about-gems-collage.png') center center/cover no-repeat;position:relative;isolation:isolate;}
+.bh-about-redesign .bh-about-exceptional-banner:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,22,36,.80) 0%,rgba(7,22,36,.58) 45%,rgba(7,22,36,.08) 100%);z-index:0;}
+.bh-about-redesign .bh-about-exceptional-banner .bh-about-container{position:relative;z-index:1;}
+.bh-about-redesign .bh-about-exceptional-copy{max-width:760px;padding:48px 0;color:#fff;}
+.bh-about-redesign .bh-about-eyebrow{color:#fff;text-transform:uppercase;letter-spacing:.14em;font-size:16px;margin-bottom:18px;}
+.bh-about-redesign .bh-about-exceptional-copy h2{color:#fff;font-size:clamp(30px,3.15vw,49px);text-transform:uppercase;line-height:1.17;}
+.bh-about-redesign .bh-about-exceptional-detail{padding-block:30px 44px;text-align:center;max-width:1000px;}
+.bh-about-redesign .bh-about-exceptional-detail p{font-size:clamp(16px,1.22vw,19px);margin-bottom:13px;}
+.bh-about-redesign .bh-about-objectives{padding:55px 0 65px;text-align:center;background:#edf5fb !important;}
+.bh-about-redesign .bh-about-objective-card{padding:38px 8%;border-radius:13px;background:rgba(255,255,255,.50);box-shadow:0 5px 24px rgba(18,48,73,.04);}
+.bh-about-redesign .bh-about-objective-card p{font-size:clamp(17px,1.27vw,20px);max-width:980px;margin-inline:auto;}
+.bh-about-redesign .bh-about-preserving .bh-about-copy{max-width:550px;}
+.bh-about-redesign .bh-about-genesis{padding:65px 0 88px;background:#edf5fb !important;text-align:center;}
+.bh-about-redesign .bh-about-genesis h2{font-size:clamp(30px,3.15vw,48px);}
+.bh-about-redesign .bh-about-genesis-card{padding:26px 30px 30px;background:#fff;border-radius:12px;box-shadow:0 7px 28px rgba(18,48,73,.06);}
+.bh-about-redesign .bh-about-genesis-card img{width:100%;height:auto;display:block;margin:0 auto 18px;object-fit:contain;}
+.bh-about-redesign .bh-about-genesis-card p{padding:20px 7%;background:#f3f6fa;border-radius:9px;font-size:clamp(16px,1.15vw,19px);}
+@media(max-width:900px){
+ .bh-about-redesign .bh-about-intro{padding-top:155px;}
+ .bh-about-redesign .bh-about-company-stage{display:block;min-height:0;}
+ .bh-about-redesign .bh-about-company-gallery{width:100%;height:390px;}
+ .bh-about-redesign .bh-about-company-card{position:relative;left:auto;top:auto;transform:none;width:min(95%,650px);margin:-35px auto 0;z-index:2;}
+ .bh-about-redesign .bh-about-two-columns{grid-template-columns:1fr;gap:34px;}
+ .bh-about-redesign .bh-about-heritage .bh-about-copy{order:-1;}
+ .bh-about-redesign .bh-about-preserving .bh-about-copy{max-width:none;}
+ .bh-about-redesign .bh-about-gem-grid img{height:230px;}
+}
+@media(max-width:600px){
+ .bh-about-redesign .bh-about-container{width:calc(100% - 36px);}
+ .bh-about-redesign .bh-about-intro{padding:110px 0 20px;}
+ .bh-about-redesign .bh-about-company{padding:25px 0 65px;}
+ .bh-about-redesign .bh-about-company-gallery{gap:6px;padding:5px;height:280px;}
+ .bh-about-redesign .bh-about-company-gallery img{border-radius:8px;}
+ .bh-about-redesign .bh-about-company-card{padding:24px 22px;width:97%;}
+ .bh-about-redesign .bh-about-company-card p{font-size:12px;}
+ .bh-about-redesign .bh-about-heritage,.bh-about-redesign .bh-about-preserving{padding:48px 0;}
+ .bh-about-redesign .bh-about-gem-grid{gap:10px;}
+ .bh-about-redesign .bh-about-gem-grid img{height:160px;}
+ .bh-about-redesign .bh-about-gem-grid img:nth-child(3){height:170px;width:78%;}
+ .bh-about-redesign .bh-about-exceptional-banner{min-height:330px;}
+ .bh-about-redesign .bh-about-exceptional-copy{padding:35px 0;}
+ .bh-about-redesign .bh-about-objectives{padding:40px 0;}
+ .bh-about-redesign .bh-about-objective-card{padding:24px 18px;}
+ .bh-about-redesign .bh-about-genesis{padding:45px 0 60px;}
+ .bh-about-redesign .bh-about-genesis-card{padding:14px;}
+ .bh-about-redesign .bh-about-genesis-card p{padding:14px;}
+}
+
+
+/* BLUE HUES ABOUT V02 — company copy, proportions and spacing */
+/* Preserve the About page structure and the homepage V22 styling. */
+.bh-about-redesign .bh-about-company-card .bh-about-accent {
+  text-transform: uppercase !important;
+  color: var(--bh-about-teal) !important;
+}
+/* Match the homepage gallery's visual span inside the 1240px content area. */
+.bh-about-redesign .bh-about-company-stage {max-width:1240px;margin-inline:auto;}
+.bh-about-redesign .bh-about-company-gallery {width:90%;}
+.bh-about-redesign .bh-about-company-card {width:39%;}
+/* Restore the original company description beneath the image composition. */
+.bh-about-redesign .bh-about-company-history {
+  margin:clamp(48px,5vw,74px) auto 0;
+  max-width:1100px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+}
+.bh-about-redesign .bh-about-company-history p {
+  font-family:'Libre Caslon Text',Georgia,serif !important;
+  font-size:clamp(16px,1.24vw,19px);
+  line-height:1.73;
+  color:#3f4650;
+  text-transform:none;
+  letter-spacing:normal;
+}
+.bh-about-redesign .bh-about-company-history .bh-about-accent {
+  text-transform:uppercase;
+  color:var(--bh-about-teal);
+}
+/* Client-requested gold underline below the exceptional find headline. */
+.bh-about-redesign .bh-about-exceptional-heading::after {
+  content:'';display:block;width:100px;height:3px;
+  background:var(--bh-about-gold);border-radius:3px;margin-top:20px;
+}
+/* Objectives are the statement card only — no title. */
+.bh-about-redesign .bh-about-objectives {padding:80px 0 80px !important;}
+/* Increase breathing room between About sections (roughly +25px per boundary). */
+.bh-about-redesign .bh-about-company {padding-bottom:135px !important;}
+.bh-about-redesign .bh-about-heritage,
+.bh-about-redesign .bh-about-preserving {padding-top:110px !important;padding-bottom:110px !important;}
+.bh-about-redesign .bh-about-exceptional-detail {padding-top:55px !important;padding-bottom:69px !important;}
+.bh-about-redesign .bh-about-genesis {padding-top:90px !important;padding-bottom:113px !important;}
+@media(max-width:900px){
+  .bh-about-redesign .bh-about-company-gallery {width:100%;}
+  .bh-about-redesign .bh-about-company-card {width:min(95%,650px);}
+}
+@media(max-width:600px){
+  .bh-about-redesign .bh-about-company {padding-bottom:85px !important;}
+  .bh-about-redesign .bh-about-company-history {margin-top:36px;gap:17px;}
+  .bh-about-redesign .bh-about-company-history p {font-size:15px;}
+  .bh-about-redesign .bh-about-heritage,
+  .bh-about-redesign .bh-about-preserving {padding-block:65px !important;}
+  .bh-about-redesign .bh-about-objectives {padding-block:55px !important;}
+  .bh-about-redesign .bh-about-genesis {padding-block:65px 80px !important;}
+  .bh-about-redesign .bh-about-exceptional-detail {padding-block:48px 55px !important;}
+}
+
+
+/* BLUE HUES ABOUT V03 — scoped visual corrections, preserve HOME V22 */
+/* Gallery calibrated to the same 1240px parent width and modest image height as homepage Artisanal. */
+.bh-about-redesign .bh-about-company-stage{width:100%;max-width:1240px;min-height:0;margin:0 auto;display:flex;align-items:center;justify-content:flex-end;}
+.bh-about-redesign .bh-about-company-gallery{width:82%;max-width:1050px;height:440px;flex:none;}
+.bh-about-redesign .bh-about-company-card{width:min(44%,540px);padding:23px 27px;z-index:2;}
+.bh-about-redesign .bh-about-company-card p{font-family:'Libre Caslon Text',Georgia,serif !important;font-size:clamp(11px,.79vw,13px) !important;line-height:1.47 !important;letter-spacing:.015em !important;text-transform:none !important;margin:0 0 11px !important;color:#334153 !important;}
+.bh-about-redesign .bh-about-company-card p:last-child{margin-bottom:0 !important;}
+.bh-about-redesign .bh-about-company-card .bh-about-accent{color:var(--bh-about-teal) !important;text-transform:uppercase !important;letter-spacing:.025em;}
+.bh-about-redesign .bh-about-company-history{display:none !important;}
+/* Objectives: exact approved two-paragraph statement, no title, larger Caslon text. */
+.bh-about-redesign .bh-about-objectives .bh-about-objective-card{padding:26px clamp(25px,6vw,95px);background:rgba(255,255,255,.45);}
+.bh-about-redesign .bh-about-objectives .bh-about-objective-card p{font-family:'Libre Caslon Text',Georgia,serif !important;color:#263a52;font-style:normal !important;font-size:clamp(20px,1.7vw,28px) !important;line-height:1.38 !important;max-width:1080px;margin:0 auto 19px !important;text-align:center;}
+.bh-about-redesign .bh-about-objectives .bh-about-objective-card p:last-child{margin-bottom:0 !important;}
+/* Genesis supplied PNG includes excessive blank space: crop it into a chart-height window. */
+.bh-about-redesign .bh-about-genesis-image-window{width:100%;height:clamp(190px,17vw,280px);overflow:hidden;background:#fff;margin:0 0 15px;}
+.bh-about-redesign .bh-about-genesis-image-window img{display:block;width:100%;height:100% !important;max-height:none !important;object-fit:cover !important;object-position:center 50% !important;margin:0 !important;}
+@media(max-width:900px){
+ .bh-about-redesign .bh-about-company-stage{display:flex;flex-direction:column;align-items:center;}
+ .bh-about-redesign .bh-about-company-gallery{width:100%;height:355px;}
+ .bh-about-redesign .bh-about-company-card{position:relative;top:auto;left:auto;transform:none;width:min(95%,650px);margin:-35px auto 0;}
+ .bh-about-redesign .bh-about-company-card p{font-size:13px !important;line-height:1.55 !important;}
+}
+@media(max-width:600px){
+ .bh-about-redesign .bh-about-company-gallery{height:265px;}
+ .bh-about-redesign .bh-about-company-card{padding:20px 18px;}
+ .bh-about-redesign .bh-about-company-card p{font-size:12px !important;}
+ .bh-about-redesign .bh-about-objectives .bh-about-objective-card p{font-size:19px !important;}
+ .bh-about-redesign .bh-about-genesis-image-window{height:155px;}
+}
+
+
+/* V05 — exact HOMEPAGE Artisanal gallery markup reused on ABOUT */
+.bh-about-redesign .bh-about-company-home-clone { width:100%; max-width:1240px; margin-inline:auto; }
+.bh-about-redesign .bh-about-company-home-clone .bh-about-company-home-copy { background:#fff !important; }
+.bh-about-redesign .bh-about-company-home-clone .bh-about-company-home-copy p {
+  font-family:'Libre Caslon Text',Georgia,serif !important;
+  font-size:clamp(11px,.76vw,13px) !important;
+  line-height:1.52 !important;
+  letter-spacing:.01em !important;
+  text-transform:none !important;
+  color:#334153 !important;
+  margin:0 0 10px !important;
+}
+.bh-about-redesign .bh-about-company-home-clone .bh-about-company-home-copy p:last-child {margin-bottom:0 !important;}
+.bh-about-redesign .bh-about-company-home-clone .bh-about-accent {color:#4f7d78 !important;text-transform:uppercase !important;}
+@media(max-width:1023px){
+ .bh-about-redesign .bh-about-company-home-clone .bh-about-company-home-copy p {font-size:13px !important;line-height:1.55 !important;}
+}
+@media(max-width:600px){
+ .bh-about-redesign .bh-about-company-home-clone .bh-about-company-home-copy p {font-size:12px !important;}
+}
+
+
+/* ============================================================
+   ABOUT V06 — HOMEPAGE TYPOGRAPHY PARITY + COMPLETE GENESIS CHART
+   Scope: About page only. Header, footer, homepage and catalog untouched.
+   ============================================================ */
+/* Match the homepage Artisanal card typography, including caps and tracking. */
+.bh-about-redesign .bh-about-company-home-clone .bh-about-company-home-copy p {
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  font-size: clamp(13px, 1.05vw, 15px) !important;
+  line-height: 1.85 !important;
+  letter-spacing: .075em !important;
+  text-transform: uppercase !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  color: #3f4650 !important;
+  margin: 0 0 12px !important;
+}
+.bh-about-redesign .bh-about-company-home-clone .bh-about-company-home-copy p:last-child {
+  margin-bottom: 0 !important;
+}
+.bh-about-redesign .bh-about-company-home-clone .bh-about-company-home-copy .bh-about-accent {
+  color: #4f7d78 !important;
+  text-transform: uppercase !important;
+  letter-spacing: inherit !important;
+  font-style: normal !important;
+}
+/* Longer three-paragraph copy needs its natural card height; keep the photo dimensions. */
+@media (min-width: 1024px) {
+  .bh-about-redesign .bh-about-company-home-clone {
+    display: flow-root !important;
+    min-height: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .bh-about-redesign .bh-about-company-home-clone > .relative.z-10 {
+    /* Keep the overlapping white-card look but never clip the longer copy. */
+    bottom: auto !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+  .bh-about-redesign .bh-about-company-home-clone .bh-about-company-home-copy {
+    max-height: none !important;
+  }
+}
+/* The supplied timeline PNG has whitespace: show the FULL image, not a cover crop. */
+.bh-about-redesign .bh-about-genesis-image-window {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  margin-bottom: 15px !important;
+}
+.bh-about-redesign .bh-about-genesis-image-window img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  margin: 0 !important;
+}
+@media (max-width: 1023px) {
+  .bh-about-redesign .bh-about-company-home-clone > .relative.z-10 {
+    transform: none !important;
+  }
+}
+@media (max-width: 600px) {
+  .bh-about-redesign .bh-about-company-home-clone .bh-about-company-home-copy p {
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+    letter-spacing: .045em !important;
+  }
+}
+
+/* ============================================================
+   ABOUT V07 — company card aligns with images; timeline fits frame
+   Page-scoped rules only; preserve homepage and shared layout.
+   ============================================================ */
+@media (min-width: 1024px) {
+  .bh-about-redesign .bh-about-company-home-clone > .relative.z-10 {
+    top: 0 !important;
+    bottom: auto !important;
+    transform: none !important;
+  }
+  /* Let the longer company copy extend below photos without clipping. */
+  .bh-about-redesign .bh-about-company-home-clone {
+    overflow: visible !important;
+  }
+}
+
+/* Show only the actual timeline band, not the embedded blank image margins.
+   The image remains proportional; overflow clips the extra white space. */
+.bh-about-redesign .bh-about-genesis-image-window {
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 3 / 1 !important;
+  max-height: none !important;
+  overflow: hidden !important;
+  background: #fff !important;
+  margin-bottom: 15px !important;
+}
+.bh-about-redesign .bh-about-genesis-image-window img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center 52% !important;
+  margin: 0 !important;
+}
+@media (max-width: 640px) {
+  .bh-about-redesign .bh-about-genesis-image-window {
+    aspect-ratio: 2.3 / 1 !important;
+  }
+}
+
+/* ============================================================
+   ABOUT V08 — Company/gallery horizontal alignment + Genesis
+   Keep homepage, shared header/footer, and company vertical card position.
+   Homepage and About use matching 75%/73% photo wrapper classes.
+   The About outer content is 1240px; expand Company only to
+   the standard 1280px outer canvas, giving +20px per side.
+   ============================================================ */
+@media (min-width: 1280px) {
+  .bh-about-redesign .bh-about-company > .bh-about-container {
+    width: min(1280px, calc(100% - 48px)) !important;
+    max-width: 1280px !important;
+  }
+  /* Move the whole composition left a little, uncovering the first photo.
+     Do not touch top/transform of the white copy card (V07). */
+  .bh-about-redesign .bh-about-company-home-clone {
+    left: -16px !important;
+    position: relative !important;
+  }
+}
+/* Increase the chart's visible frame height without stretching the graphic. */
+.bh-about-redesign .bh-about-genesis-image-window {
+  aspect-ratio: 5 / 2 !important; /* previously 3 / 1 */
+}
+.bh-about-redesign .bh-about-genesis-image-window img {
+  object-fit: cover !important;
+  object-position: center 51% !important;
+}
+@media (max-width: 640px) {
+  .bh-about-redesign .bh-about-genesis-image-window {
+    aspect-ratio: 2 / 1 !important;
+  }
+}
+
+
+/* ============================================================
+   V09 — MATCHING HOME + ABOUT DIVIDER STRIPS
+   Home uses its existing separate newsletter divider.
+   About adds the same strip after the Genesis section.
+   No shared footer or page markup changes.
+   ============================================================ */
+body:has(.bh-home-redesign) main .bh-home-redesign > section:has(.box-bg-32)::after {
+  background-color: #d1cfcf !important;
+}
+.bh-about-redesign::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 57px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  background: #d1cfcf;
+  border: 0;
+  pointer-events: none;
+}
+
+/* ============================================================
+   ABOUT V10 — Highlight words match surrounding typography
+   Company stays uppercase; Heritage and Preserving stay sentence case.
+   ============================================================ */
+.bh-about-redesign .bh-about-company-home-copy .bh-about-accent,
+.bh-about-redesign .bh-about-heritage .bh-about-accent,
+.bh-about-redesign .bh-about-preserving .bh-about-accent {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  font-style: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  color: #4f7d78 !important;
+}
+.bh-about-redesign .bh-about-company-home-copy .bh-about-accent {
+  text-transform: uppercase !important;
+}
+.bh-about-redesign .bh-about-heritage .bh-about-accent,
+.bh-about-redesign .bh-about-preserving .bh-about-accent {
+  text-transform: none !important;
 }

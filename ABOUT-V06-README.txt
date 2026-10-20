@@ -1,0 +1,1 @@
+Replace only root custom.css. Based on V05. Makes Company card typography uppercase Libre Caslon to match homepage Artisanal card and shows the entire Genesis PNG without CSS cropping. Note: whitespace built into the image itself will remain; trim the original image if needed. HTML and JS unchanged.
