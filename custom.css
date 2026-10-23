@@ -1733,9 +1733,9 @@ body:has(.bh-home-redesign) main .bh-home-redesign > section:has(.box-bg-32)::af
      Override earlier full-viewport min-height declarations. */
   body:has(.bh-home-redesign) main .bh-home-redesign section.bh-home-hero {
     box-sizing: border-box !important;
-    height: clamp(560px, 100svh, 760px) !important;
-    min-height: 560px !important;
-    max-height: 760px !important;
+    height: clamp(420px, 85svh, 660px) !important;
+    min-height: 420px !important;
+    max-height: 660px !important;
     padding-top: clamp(125px, 15svh, 190px) !important;
     padding-bottom: 24px !important;
     align-items: center !important;
