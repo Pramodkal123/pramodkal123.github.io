@@ -1306,7 +1306,7 @@ body:has(.bh-home-redesign) main .bh-home-redesign > section:has(.box-bg-32)::af
   width: 100%;
   height: 38px; /* 2.5 × previous 15px line (rounded) */
   margin-top: 24px; /* visible white gap below newsletter */
-  background-color: #e8e7e7;
+  background-color: #d1cfcf;
   border: 0;
   pointer-events: none;
 }
@@ -1668,7 +1668,7 @@ body:has(.bh-home-redesign) main .bh-home-redesign > section:has(.box-bg-32)::af
    No shared footer or page markup changes.
    ============================================================ */
 body:has(.bh-home-redesign) main .bh-home-redesign > section:has(.box-bg-32)::after {
-  background-color: #e4e3e3 !important;
+  background-color: #d1cfcf !important;
 }
 .bh-about-redesign::after {
   content: "";
@@ -1983,7 +1983,7 @@ body:has(.bh-home-redesign) main .bh-home-redesign > section:has(.box-bg-32)::af
     margin: 0 !important;
     padding: 0 18px !important;
     box-sizing: border-box !important;
-    transform: translate(-50%, -32%) !important;
+    transform: translate(-50%, -60%) !important;
   }
   body:has(.bh-home-redesign) main .bh-home-redesign .bh-home-hero-copy {
     width: min(100%, 560px) !important;
@@ -2002,142 +2002,42 @@ body:has(.bh-home-redesign) main .bh-home-redesign > section:has(.box-bg-32)::af
   }
 }
 
-/* MOBILE HERO HEIGHT ADJUSTMENT */
-@media (max-width: 640px) {
-  body:has(.bh-home-redesign) main
-  .bh-home-redesign section.bh-home-hero {
 
-    height: 250px !important;
-    min-height: 250px !important;
-    max-height: 250px !important;
 
-    background-size: cover !important;
-    background-position: center center !important;
-  }
+/* ============================================================
+   HOME V30 — SUPPLIED IMAGE-ONLY HERO BANNER
+   Removes the old text-card/overlay layout entirely by replacing
+   .bh-home-hero with .bh-home-banner in HTML and React JS.
+   Responsive image retains complete design and aspect ratio.
+   ============================================================ */
+body:has(.bh-home-redesign) main .bh-home-redesign section.bh-home-banner {
+  display: block !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  background: none !important;
 }
-
-
-/* HERO TO ARTISANAL SECTION SPACING */
-
-/* Desktop */
-@media (min-width: 1024px) {
-  body:has(.bh-home-redesign) main
-  .bh-home-redesign section.bh-home-hero {
-    margin-bottom: 220px !important;
-  }
+body:has(.bh-home-redesign) main .bh-home-redesign .bh-home-banner img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
-
-/* Tablet */
-@media (min-width: 641px) and (max-width: 1023px) {
-  body:has(.bh-home-redesign) main
-  .bh-home-redesign section.bh-home-hero {
-    margin-bottom: 180px !important;
-  }
-}
-
-/* Mobile */
-@media (max-width: 640px) {
-  body:has(.bh-home-redesign) main
-  .bh-home-redesign section.bh-home-hero {
-    margin-bottom: 170px !important;
-  }
-}
-
-
-/* DESKTOP ONLY — WIDER, CENTERED HERO TILE */
-@media (min-width: 1024px) {
-
-  /* Center the tile and keep 50% overlap */
-  body:has(.bh-home-redesign) main
-  .bh-home-redesign .bh-home-hero-inner {
-    left: 50% !important;
-    top: 100% !important;
-    transform: translate(-50%, -77%) !important;
-
-    display: flex !important;
-    justify-content: center !important;
-  }
-
-  /* Increase width to reduce text wrapping */
-  body:has(.bh-home-redesign) main
-  .bh-home-redesign .bh-home-hero-copy {
-    width: min(900px, 100%) !important;
-    max-width: 900px !important;
-
-    padding: 35px 45px !important;
-    text-align: left !important;
-  }
-
-  /* Allow the description to use the full tile width */
-  body:has(.bh-home-redesign) main
-  .bh-home-redesign .bh-home-hero-description {
-    max-width: 100% !important;
-  }
-
-  /* Reduce the space before Artisanal */
-  body:has(.bh-home-redesign) main
-  .bh-home-redesign section.bh-home-hero {
-    margin-bottom: 200px !important;
-  }
-
-}/* DESKTOP — ALLOW HERO HEADING TO USE FULL TILE WIDTH */
-@media (min-width: 1024px) {
-
-  body:has(.bh-home-redesign) main
-  .bh-home-redesign .bh-home-hero-copy {
-   width: min(1150px, 100%) !important;
-max-width: 1150px !important;
-  }
-
-  body:has(.bh-home-redesign) main
-  .bh-home-redesign #bh-home-hero-title {
-    width: 100% !important;
-    max-width: none !important;
-    font-size: clamp(32px, 2.3vw, 43px) !important;
-    line-height: 1.12 !important;
-  }
-}
-
-/* MOBILE — MOVE HERO TEXT TILE LOWER */
-@media (max-width: 640px) {
-  body:has(.bh-home-redesign) main
-  .bh-home-redesign .bh-home-hero-inner {
-    transform: translate(-50%, -13%) !important;
-  }
-}
-
-/* MOBILE — EXTRA SPACE BELOW HERO TILE */
-@media (max-width: 640px) {
-  body:has(.bh-home-redesign) main
-  .bh-home-redesign section.bh-home-hero {
-    margin-bottom: 300px !important;
-  }
-}
-
-
-/* TABLET ONLY — HERO TILE ADJUSTMENTS */
-@media (min-width: 641px) and (max-width: 1023px) {
-
-  /* Horizontal and vertical positioning */
-  body:has(.bh-home-redesign) main
-  .bh-home-redesign .bh-home-hero-inner {
-    left: 50% !important;
-    top: 100% !important;
-    transform: translate(-50%, -78%) !important;
-  }
-
-  /* Text box width */
-  body:has(.bh-home-redesign) main
-  .bh-home-redesign .bh-home-hero-copy {
-    width: 90% !important;
-    max-width: 750px !important;
+@media (min-width: 1301px) {
+  body:has(.bh-home-redesign) main .bh-home-redesign section.bh-home-banner {
+    width: min(1240px, calc(100% - 48px)) !important;
+    max-width: 1240px !important;
     margin-inline: auto !important;
+    border-radius: 15px !important;
   }
-
-  /* Space between hero and Artisanal section */
-  body:has(.bh-home-redesign) main
-  .bh-home-redesign section.bh-home-hero {
-    margin-bottom: 220px !important;
-  }
-
 }

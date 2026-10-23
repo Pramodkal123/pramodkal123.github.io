@@ -1,0 +1,38 @@
+
+/* ============================================================
+   HOME V30 — SUPPLIED IMAGE-ONLY HERO BANNER
+   Removes the old text-card/overlay layout entirely by replacing
+   .bh-home-hero with .bh-home-banner in HTML and React JS.
+   Responsive image retains complete design and aspect ratio.
+   ============================================================ */
+body:has(.bh-home-redesign) main .bh-home-redesign section.bh-home-banner {
+  display: block !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  background: none !important;
+}
+body:has(.bh-home-redesign) main .bh-home-redesign .bh-home-banner img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+@media (min-width: 1301px) {
+  body:has(.bh-home-redesign) main .bh-home-redesign section.bh-home-banner {
+    width: min(1240px, calc(100% - 48px)) !important;
+    max-width: 1240px !important;
+    margin-inline: auto !important;
+    border-radius: 15px !important;
+  }
+}
