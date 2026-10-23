@@ -2042,3 +2042,58 @@ body:has(.bh-home-redesign) main .bh-home-redesign > section:has(.box-bg-32)::af
     margin-bottom: 170px !important;
   }
 }
+
+
+/* DESKTOP ONLY — WIDER, CENTERED HERO TILE */
+@media (min-width: 1024px) {
+
+  /* Center the tile and keep 50% overlap */
+  body:has(.bh-home-redesign) main
+  .bh-home-redesign .bh-home-hero-inner {
+    left: 50% !important;
+    top: 100% !important;
+    transform: translate(-50%, -77%) !important;
+
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  /* Increase width to reduce text wrapping */
+  body:has(.bh-home-redesign) main
+  .bh-home-redesign .bh-home-hero-copy {
+    width: min(900px, 100%) !important;
+    max-width: 900px !important;
+
+    padding: 35px 45px !important;
+    text-align: left !important;
+  }
+
+  /* Allow the description to use the full tile width */
+  body:has(.bh-home-redesign) main
+  .bh-home-redesign .bh-home-hero-description {
+    max-width: 100% !important;
+  }
+
+  /* Reduce the space before Artisanal */
+  body:has(.bh-home-redesign) main
+  .bh-home-redesign section.bh-home-hero {
+    margin-bottom: 200px !important;
+  }
+
+}/* DESKTOP — ALLOW HERO HEADING TO USE FULL TILE WIDTH */
+@media (min-width: 1024px) {
+
+  body:has(.bh-home-redesign) main
+  .bh-home-redesign .bh-home-hero-copy {
+   width: min(1150px, 100%) !important;
+max-width: 1150px !important;
+  }
+
+  body:has(.bh-home-redesign) main
+  .bh-home-redesign #bh-home-hero-title {
+    width: 100% !important;
+    max-width: none !important;
+    font-size: clamp(32px, 2.3vw, 43px) !important;
+    line-height: 1.12 !important;
+  }
+}
