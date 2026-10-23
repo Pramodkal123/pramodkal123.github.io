@@ -1983,7 +1983,7 @@ body:has(.bh-home-redesign) main .bh-home-redesign > section:has(.box-bg-32)::af
     margin: 0 !important;
     padding: 0 18px !important;
     box-sizing: border-box !important;
-    transform: translate(-50%, -60%) !important;
+    transform: translate(-50%, -32%) !important;
   }
   body:has(.bh-home-redesign) main .bh-home-redesign .bh-home-hero-copy {
     width: min(100%, 560px) !important;
@@ -1995,9 +1995,50 @@ body:has(.bh-home-redesign) main .bh-home-redesign > section:has(.box-bg-32)::af
 @media (max-width: 640px) {
   body:has(.bh-home-redesign) main .bh-home-redesign section.bh-home-hero {
     /* Longer text on narrow screens needs a little extra clearance. */
-    margin-bottom: clamp(240px, 43vh, 440px) !important;
+    margin-bottom: clamp(170px, 43vh, 440px) !important;
   }
   body:has(.bh-home-redesign) main .bh-home-redesign .bh-home-hero-inner {
     padding-inline: 14px !important;
+  }
+}
+
+/* MOBILE HERO HEIGHT ADJUSTMENT */
+@media (max-width: 640px) {
+  body:has(.bh-home-redesign) main
+  .bh-home-redesign section.bh-home-hero {
+
+    height: 250px !important;
+    min-height: 250px !important;
+    max-height: 250px !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+}
+
+
+/* HERO TO ARTISANAL SECTION SPACING */
+
+/* Desktop */
+@media (min-width: 1024px) {
+  body:has(.bh-home-redesign) main
+  .bh-home-redesign section.bh-home-hero {
+    margin-bottom: 220px !important;
+  }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1023px) {
+  body:has(.bh-home-redesign) main
+  .bh-home-redesign section.bh-home-hero {
+    margin-bottom: 180px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  body:has(.bh-home-redesign) main
+  .bh-home-redesign section.bh-home-hero {
+    margin-bottom: 170px !important;
   }
 }
