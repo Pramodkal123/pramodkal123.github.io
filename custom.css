@@ -2113,3 +2113,31 @@ max-width: 1150px !important;
     margin-bottom: 300px !important;
   }
 }
+
+
+/* TABLET ONLY — HERO TILE ADJUSTMENTS */
+@media (min-width: 641px) and (max-width: 1023px) {
+
+  /* Horizontal and vertical positioning */
+  body:has(.bh-home-redesign) main
+  .bh-home-redesign .bh-home-hero-inner {
+    left: 50% !important;
+    top: 100% !important;
+    transform: translate(-50%, -78%) !important;
+  }
+
+  /* Text box width */
+  body:has(.bh-home-redesign) main
+  .bh-home-redesign .bh-home-hero-copy {
+    width: 90% !important;
+    max-width: 750px !important;
+    margin-inline: auto !important;
+  }
+
+  /* Space between hero and Artisanal section */
+  body:has(.bh-home-redesign) main
+  .bh-home-redesign section.bh-home-hero {
+    margin-bottom: 220px !important;
+  }
+
+}
