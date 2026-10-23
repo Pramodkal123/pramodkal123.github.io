@@ -1891,7 +1891,7 @@ body:has(.bh-home-redesign) main .bh-home-redesign > section:has(.box-bg-32)::af
     margin: 0 !important;
     padding-inline: clamp(28px, 5vw, 84px) !important;
     padding-block: 0 !important;
-    transform: translate(-50%, -76%) !important; /* 65% inside hero, 35% below */
+    transform: translate(-50%, -75%) !important; /* 65% inside hero, 35% below */
   }
   body:has(.bh-home-redesign) main .bh-home-redesign .bh-home-hero-copy {
     box-sizing: border-box !important;
