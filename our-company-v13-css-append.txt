@@ -1,0 +1,88 @@
+
+/* ==============================================================
+   ABOUT V13 — OUR COMPANY: EDITORIAL WRAP-AROUND COMPOSITION
+   TWEAK: panel padding, photo height, column split below.
+   Existing text remains selectable and SEO-readable.
+   =============================================================== */
+.bh-about-redesign .bh-company-v13 {
+  background: #f3f7fc !important;
+  padding-top: 32px !important;
+  padding-bottom: 95px !important;
+}
+.bh-about-redesign .bh-company-v13 .bh-company-panel {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 39%) minmax(0, 61%);
+  column-gap: 0;
+  row-gap: 20px;
+  align-items: start;
+  margin-top: 28px;
+  padding: 34px 34px 28px;
+  border-radius: 22px;
+  background: #fffdfa;
+  box-shadow: 0 12px 35px rgba(19, 44, 64, .09);
+}
+.bh-about-redesign .bh-company-v13 .bh-company-intro {
+  grid-column: 1;
+  grid-row: 1;
+  padding: 0 32px 0 0;
+  min-width: 0;
+}
+.bh-about-redesign .bh-company-v13 .bh-company-photos {
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  transform: translateY(-52px);
+  margin-bottom: -52px;
+}
+.bh-about-redesign .bh-company-v13 .bh-company-photos img {
+  width: 100%;
+  height: clamp(285px, 32vw, 405px); /* PHOTO HEIGHT */
+  max-height: 405px;
+  display: block;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 5px 16px rgba(22, 36, 44, .11);
+}
+.bh-about-redesign .bh-company-v13 .bh-company-conclusion {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+.bh-about-redesign .bh-company-v13 :is(.bh-company-intro, .bh-company-conclusion) p {
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  font-size: clamp(12px, 1.03vw, 15px) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: .06em !important;
+  line-height: 1.72 !important;
+  color: #424e5b !important;
+  margin: 0 0 22px !important;
+}
+.bh-about-redesign .bh-company-v13 :is(.bh-company-intro, .bh-company-conclusion) p:last-child {margin-bottom: 0 !important;}
+.bh-about-redesign .bh-company-v13 .bh-about-accent {
+  color: #4f7d78 !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  letter-spacing: inherit !important;
+  font-weight: inherit !important;
+}
+@media (max-width: 1023px) {
+ .bh-about-redesign .bh-company-v13 .bh-company-panel {grid-template-columns: 1fr; gap: 24px; padding: 26px; margin-top: 25px;}
+ .bh-about-redesign .bh-company-v13 .bh-company-intro {grid-column: 1;grid-row: 1;padding: 0;}
+ .bh-about-redesign .bh-company-v13 .bh-company-photos {grid-column: 1;grid-row: 2;transform: none;margin-bottom: 0;}
+ .bh-about-redesign .bh-company-v13 .bh-company-photos img {height: clamp(200px, 35vw, 330px);}
+ .bh-about-redesign .bh-company-v13 .bh-company-conclusion {grid-column: 1;grid-row: 3;}
+}
+@media (max-width: 600px) {
+ .bh-about-redesign .bh-company-v13 {padding-bottom: 65px !important;}
+ .bh-about-redesign .bh-company-v13 .bh-company-panel {padding: 20px 16px;gap: 20px;border-radius: 16px;}
+ .bh-about-redesign .bh-company-v13 .bh-company-photos {gap: 5px;}
+ .bh-about-redesign .bh-company-v13 .bh-company-photos img {height: 180px;border-radius: 8px;}
+ .bh-about-redesign .bh-company-v13 :is(.bh-company-intro, .bh-company-conclusion) p {font-size: 12px !important;letter-spacing: .03em !important;line-height: 1.65 !important;margin-bottom: 15px !important;}
+}

@@ -1,0 +1,30 @@
+
+/* ABOUT V12 — Client artwork replaces entire Exceptional Find section.
+   Intrinsic aspect ratio: show the full image without crop or overlays. */
+.bh-about-redesign .bh-about-exceptional-image-section {
+  background: #ffffff !important;
+  padding: 36px 0 52px !important;
+  margin: 0 !important;
+}
+.bh-about-redesign .bh-about-exceptional-image-section > .bh-about-container {
+  width: min(1240px, calc(100% - 48px)) !important;
+  max-width: 1240px !important;
+  margin-inline: auto !important;
+}
+.bh-about-redesign .bh-about-exceptional-image {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  border: 0 !important;
+  margin: 0 !important;
+}
+@media (max-width: 600px) {
+  .bh-about-redesign .bh-about-exceptional-image-section {
+    padding: 22px 0 35px !important;
+  }
+  .bh-about-redesign .bh-about-exceptional-image-section > .bh-about-container {
+    width: calc(100% - 36px) !important;
+  }
+}

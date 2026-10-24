@@ -1,0 +1,4 @@
+FIX: V13 React code omitted the Our Company text, causing hydration to erase it.
+Replace ONLY _next/static/chunks/app/about/page-1728ff4499b61350.js.
+The HTML and CSS from V13 are correct and remain unchanged.
+If you did not install V13, use all files from this ZIP and append its CSS as documented.
