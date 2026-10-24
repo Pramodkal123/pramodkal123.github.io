@@ -1,0 +1,13 @@
+
+
+/* ============================================================
+   ABOUT V14 — TEAL HIGHLIGHTED WORDS IN LIBRE CASLON ITALIC
+   About Us ONLY. Keeps existing teal colour, font size, casing,
+   spacing, page layout, homepage, and shared header/footer.
+   The Google Fonts import at the top already includes italic 400.
+   ============================================================ */
+.bh-about-redesign .bh-about-accent {
+  color: #4f7d78 !important;
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  font-style: italic !important;
+}

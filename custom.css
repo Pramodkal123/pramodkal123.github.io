@@ -2309,3 +2309,28 @@ body:has(.bh-home-redesign) main .bh-home-redesign .bh-home-banner img {
  .bh-about-redesign .bh-company-v13 .bh-company-photos img {height: 180px;border-radius: 8px;}
  .bh-about-redesign .bh-company-v13 :is(.bh-company-intro, .bh-company-conclusion) p {font-size: 12px !important;letter-spacing: .03em !important;line-height: 1.65 !important;margin-bottom: 15px !important;}
 }
+
+
+/* ============================================================
+   ABOUT V14 — TEAL HIGHLIGHTED WORDS IN LIBRE CASLON ITALIC
+   About Us ONLY. Keeps existing teal colour, font size, casing,
+   spacing, page layout, homepage, and shared header/footer.
+   The Google Fonts import at the top already includes italic 400.
+   ============================================================ */
+.bh-about-redesign .bh-about-accent {
+  color: #4f7d78 !important;
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  font-style: italic !important;
+}
+/* ABOUT V14.1 — HERITAGE HIGHLIGHTS */
+
+.bh-about-redesign .bh-about-heritage .bh-about-accent,
+.bh-about-redesign .bh-about-preserving .bh-about-accent {
+    color: #4f7d78 !important;
+    font-family: 'Libre Caslon Text', Georgia, serif !important;
+    font-style: italic !important;
+    font-weight: inherit !important;
+    font-size: inherit !important;
+    letter-spacing: inherit !important;
+    line-height: inherit !important;
+}
