@@ -1,0 +1,34 @@
+
+/* ============================================================
+   ABOUT V15 — GENESIS SECTION REPLACED BY SUPPLIED ARTWORK
+   Scope: About page only; no changes to homepage or other routes.
+   The supplied image already contains title, timeline and caption.
+   ============================================================ */
+.bh-about-redesign section.bh-about-genesis-artwork {
+  background: #edf5fb !important;
+  padding: 65px 0 88px !important;
+  margin: 0 !important;
+}
+.bh-about-redesign .bh-about-genesis-artwork .bh-about-container {
+  width: min(1240px, calc(100% - 48px));
+  max-width: 1240px;
+  margin-inline: auto;
+}
+.bh-about-redesign .bh-about-genesis-artwork .bh-about-genesis-full-image {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+@media (max-width: 600px) {
+  .bh-about-redesign section.bh-about-genesis-artwork {
+    padding: 35px 0 55px !important;
+  }
+  .bh-about-redesign .bh-about-genesis-artwork .bh-about-container {
+    width: calc(100% - 36px);
+  }
+}

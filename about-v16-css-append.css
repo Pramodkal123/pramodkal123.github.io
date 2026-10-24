@@ -1,0 +1,84 @@
+/* ==============================================================
+   ABOUT V16 — COMPANY CONCLUSION OUTSIDE THE CARD + OBJECTIVES
+   Based on approved V15.3 structure; applies ONLY to About Us.
+   Keep teal italic highlights (V14.1) and Libre Caslon Text.
+   ============================================================== */
+
+/* Company panel contains ONLY the first two paragraphs and photos. */
+.bh-about-redesign .bh-company-v13 .bh-company-panel {
+  row-gap: 0 !important;
+}
+
+/* The final Company paragraph is now OUTSIDE and BELOW the ivory card. */
+.bh-about-redesign .bh-company-v13 .bh-company-conclusion {
+  display: block !important;
+  width: 100% !important;
+  max-width: 1240px !important;
+  margin: 34px auto 0 !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+  grid-column: auto !important;
+  grid-row: auto !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Match Company conclusion and Objectives: upright small uppercase Caslon. */
+.bh-about-redesign .bh-company-v13 .bh-company-conclusion p,
+.bh-about-redesign .bh-about-objectives .bh-about-objective-copy p {
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  font-size: clamp(12px, 1.03vw, 15px) !important;
+  line-height: 1.72 !important;
+  letter-spacing: .06em !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+  color: #424e5b !important;
+  margin: 0 0 22px !important;
+}
+
+/* Objectives is now plain typography on the pale-blue section, not a card. */
+.bh-about-redesign .bh-about-objectives .bh-about-objective-copy {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0 20px !important;
+  margin: 0 auto !important;
+  max-width: 1240px !important;
+  text-align: center !important;
+}
+.bh-about-redesign .bh-about-objectives .bh-about-objective-copy p:last-child,
+.bh-about-redesign .bh-company-v13 .bh-company-conclusion p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Teal highlighted phrases use REAL italic Libre Caslon Text. */
+.bh-about-redesign .bh-company-v13 .bh-company-conclusion .bh-about-accent,
+.bh-about-redesign .bh-about-objectives .bh-about-objective-copy .bh-about-accent {
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  color: #4f7d78 !important;
+  font-style: italic !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+}
+
+@media (max-width: 600px) {
+  .bh-about-redesign .bh-company-v13 .bh-company-conclusion {
+    margin-top: 25px !important;
+    padding: 0 8px !important;
+  }
+  .bh-about-redesign .bh-about-objectives .bh-about-objective-copy {
+    padding: 0 8px !important;
+  }
+  .bh-about-redesign .bh-company-v13 .bh-company-conclusion p,
+  .bh-about-redesign .bh-about-objectives .bh-about-objective-copy p {
+    font-size: 12px !important;
+    line-height: 1.65 !important;
+    letter-spacing: .03em !important;
+  }
+}

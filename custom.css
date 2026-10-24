@@ -2198,8 +2198,8 @@ body:has(.bh-home-redesign) main .bh-home-redesign .bh-home-banner img {
   margin: 0 !important;
 }
 .bh-about-redesign .bh-about-exceptional-image-section > .bh-about-container {
-  width: min(1240px, calc(100% - 48px)) !important;
-  max-width: 1240px !important;
+  width: min(960px, calc(100% - 48px)) !important;
+  max-width: 960px !important;
   margin-inline: auto !important;
 }
 .bh-about-redesign .bh-about-exceptional-image {
@@ -2273,8 +2273,9 @@ body:has(.bh-home-redesign) main .bh-home-redesign .bh-home-banner img {
   box-shadow: 0 5px 16px rgba(22, 36, 44, .11);
 }
 .bh-about-redesign .bh-company-v13 .bh-company-conclusion {
-  grid-column: 1 / -1;
-  grid-row: 2;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    padding: 35px 30px !important;
 }
 .bh-about-redesign .bh-company-v13 :is(.bh-company-intro, .bh-company-conclusion) p {
   font-family: 'Libre Caslon Text', Georgia, serif !important;
@@ -2322,15 +2323,76 @@ body:has(.bh-home-redesign) main .bh-home-redesign .bh-home-banner img {
   font-family: 'Libre Caslon Text', Georgia, serif !important;
   font-style: italic !important;
 }
-/* ABOUT V14.1 — HERITAGE HIGHLIGHTS */
 
+
+/* ============================================================
+   ABOUT V14.1 — HERITAGE + PRESERVING HIGHLIGHT ITALICS
+   These section-specific selectors override the earlier V10
+   font-style: inherit !important rules. About page only.
+   ============================================================ */
 .bh-about-redesign .bh-about-heritage .bh-about-accent,
 .bh-about-redesign .bh-about-preserving .bh-about-accent {
-    color: #4f7d78 !important;
-    font-family: 'Libre Caslon Text', Georgia, serif !important;
-    font-style: italic !important;
-    font-weight: inherit !important;
-    font-size: inherit !important;
-    letter-spacing: inherit !important;
-    line-height: inherit !important;
+  color: #4f7d78 !important;
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: inherit !important;
+  font-size: inherit !important;
+  letter-spacing: inherit !important;
+  line-height: inherit !important;
+}
+
+/* ============================================================
+   ABOUT V15 — GENESIS SECTION REPLACED BY SUPPLIED ARTWORK
+   Scope: About page only; no changes to homepage or other routes.
+   The supplied image already contains title, timeline and caption.
+   ============================================================ */
+.bh-about-redesign section.bh-about-genesis-artwork {
+  background: #edf5fb !important;
+  padding: 65px 0 88px !important;
+  margin: 0 !important;
+}
+.bh-about-redesign .bh-about-genesis-artwork .bh-about-container {
+  width: min(1240px, calc(100% - 48px));
+  max-width: 1240px;
+  margin-inline: auto;
+}
+.bh-about-redesign .bh-about-genesis-artwork .bh-about-genesis-full-image {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+@media (max-width: 600px) {
+  .bh-about-redesign section.bh-about-genesis-artwork {
+    padding: 35px 0 55px !important;
+  }
+  .bh-about-redesign .bh-about-genesis-artwork .bh-about-container {
+    width: calc(100% - 36px);
+  }
+}
+/* ABOUT V16.1 — COMPANY SPACING + OBJECTIVES FONT */
+
+/* Our Company — paragraph below ivory panel */
+.bh-about-redesign .bh-company-v13 .bh-company-conclusion {
+    padding: 35px 30px !important;
+}
+
+/* DESKTOP + TABLET */
+.bh-about-redesign .bh-about-objectives
+.bh-about-objective-copy p {
+    font-size: clamp(22px, 2vw, 32px) !important;
+    line-height: 1.5 !important;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .bh-about-redesign .bh-about-objectives
+    .bh-about-objective-copy p {
+        font-size: 18px !important;
+        line-height: 1.65 !important;
+    }
 }

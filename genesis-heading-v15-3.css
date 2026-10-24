@@ -1,0 +1,28 @@
+/* ABOUT V15.3 — Restore original section heading above Genesis artwork.
+   Append AFTER V15 and subsequent custom.css rules. About only. */
+.bh-about-redesign .bh-about-genesis-artwork .bh-about-genesis-heading {
+  display: block !important;
+  text-align: center !important;
+  margin: 0 0 30px !important;
+}
+.bh-about-redesign .bh-about-genesis-artwork .bh-about-genesis-heading h2 {
+  font-family: 'Libre Caslon Display', Georgia, serif !important;
+  font-size: clamp(30px, 3.15vw, 48px) !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 1.16 !important;
+  color: #155a92 !important;
+  margin: 0 !important;
+}
+.bh-about-redesign .bh-about-genesis-artwork .bh-about-genesis-heading .bh-about-rule {
+  display: block !important;
+  margin: 15px auto 0 !important;
+  width: 78px !important;
+  height: 3px !important;
+  background: #f0c50b !important;
+}
+@media (max-width: 600px) {
+  .bh-about-redesign .bh-about-genesis-artwork .bh-about-genesis-heading {
+    margin-bottom: 22px !important;
+  }
+}
