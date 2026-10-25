@@ -1,17 +1,21 @@
-BLUE HUES ABOUT V16 — TEXT BELOW COMPANY PANEL + OBJECTIVES HIGHLIGHTS
+BLUE HUES SUSTAINABILITY V05 — COMPLETE DROP-IN REPLACEMENT
 
-1. Replace root about.html and about/index.html.
-2. Replace _next/static/chunks/app/about/page-1728ff4499b61350.js.
-3. APPEND about-v16-css-append.css to bottom of your CURRENT custom.css.
-   Do not replace your current stylesheet if you have newer adjustments.
-4. Hard reload (Ctrl+Shift+R).
+Replace the following four files at these exact website paths:
+  sustainability.html
+  sustainability/index.html
+  sustainability.css
+  _next/static/chunks/app/sustainability/page-080cfde91d0c16bb.js
 
-Alternatively, custom-combined-v16.css includes the earlier V15 Genesis and V14.1
-styles plus this update, but append-only is safer for current styling.
+Also upload the new image to the website ROOT:
+  sustainability-spiritual-dimensions.jpg
 
-Preserved: original text, image files, Company photos, About highlights, Genesis heading,
-Exceptional Find image, other About sections and homepage styles.
+No changes to /custom.css, homepage, About Us, global layout or footer.
 
-The Company conclusion is now OUTSIDE the rounded panel, below it.
-Objectives is no longer inside a card; its original content remains in two paragraphs,
-uppercase and styled like the Company conclusion. Eight requested phrases highlighted.
+The new editable section appears directly after the Sustainability
+Our Objectives statement and before Our 4 Environmental Pillars:
+  1) Heading: The Spiritual Dimensions of Gem Mining Practices
+  2) Full uncropped composite artwork
+  3) Two paragraphs in uppercase Libre Caslon, same treatment as the
+     rehabilitation text beneath Foundations artwork.
+
+Hard refresh after copying files (Ctrl+Shift+R).
