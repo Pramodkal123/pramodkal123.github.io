@@ -1,21 +1,6 @@
-BLUE HUES SUSTAINABILITY V05 — COMPLETE DROP-IN REPLACEMENT
+Blue Hues Sustainability V06 — Environmental Pillars removal and grey divider
 
-Replace the following four files at these exact website paths:
-  sustainability.html
-  sustainability/index.html
-  sustainability.css
-  _next/static/chunks/app/sustainability/page-080cfde91d0c16bb.js
-
-Also upload the new image to the website ROOT:
-  sustainability-spiritual-dimensions.jpg
-
-No changes to /custom.css, homepage, About Us, global layout or footer.
-
-The new editable section appears directly after the Sustainability
-Our Objectives statement and before Our 4 Environmental Pillars:
-  1) Heading: The Spiritual Dimensions of Gem Mining Practices
-  2) Full uncropped composite artwork
-  3) Two paragraphs in uppercase Libre Caslon, same treatment as the
-     rehabilitation text beneath Foundations artwork.
-
-Hard refresh after copying files (Ctrl+Shift+R).
+Replace sustainability.html (site root), sustainability/index.html, sustainability.css (site root), and _next/static/chunks/app/sustainability/page-080cfde91d0c16bb.js.
+The included sustainability-spiritual-dimensions.jpg is unchanged from V05; upload if you do not already have it.
+Do NOT overwrite custom.css.
+The footer strip is 57px high, #e7e7e7, with 24px white spacing above and below. Search SUSTAINABILITY V06 at end of sustainability.css to adjust.

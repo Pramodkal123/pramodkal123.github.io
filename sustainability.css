@@ -464,16 +464,27 @@
   .bh-sustainability-redesign .bh-sus-spiritual-copy { padding-inline: 4px; }
   .bh-sustainability-redesign .bh-sus-spiritual-copy p { font-size: 12px !important; letter-spacing: .03em !important; line-height: 1.65 !important; }
 }
-/* SUSTAINABILITY V05.1 — INTRO PARAGRAPH TYPOGRAPHY */
 
-.bh-sustainability-redesign > section:first-child > p {
-    font-family: 'Libre Caslon Text', Georgia, serif !important;
-    font-size: clamp(18px, 1.5vw, 24px) !important;
-    font-style: normal !important;
-    font-weight: 400 !important;
-    line-height: 1.55 !important;
-    letter-spacing: normal !important;
-    color: #3f4650 !important;
-    max-width: 820px !important;
-    margin-inline: auto !important;
+
+/* ============================================================
+   SUSTAINABILITY V06 — HOME / ABOUT MATCHING FOOTER DIVIDER
+   Replaces Environmental Pillars, no impact on other pages.
+   ============================================================ */
+.bh-sustainability-redesign > section.bh-sus-footer-divider {
+  display: block !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 57px !important; /* Same as Home and About divider */
+  min-height: 57px !important;
+  padding: 0 !important;
+  margin: 24px 0 0 !important; /* White space above */
+  border: 0 !important;
+  background: #e7e7e7 !important; /* Matching grey */
+  background-image: none !important;
+  pointer-events: none;
+}
+/* Existing page bottom padding is large; use a 24px gap below strip. */
+.bh-sustainability-redesign:has(> section.bh-sus-footer-divider) {
+  padding-bottom: 24px !important;
 }
