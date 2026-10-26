@@ -488,3 +488,99 @@
 .bh-sustainability-redesign:has(> section.bh-sus-footer-divider) {
   padding-bottom: 24px !important;
 }
+
+
+/* ============================================================
+   SUSTAINABILITY V07 — NARROW GALLERY CARD + EDUCATION OUTSIDE QUOTES
+   ============================================================ */
+@media (min-width: 1024px) {
+  .bh-sustainability-redesign .bh-sus-responsible-card {
+    width: min(35%, 430px) !important; /* Narrower = more visible photos */
+    min-height: 350px !important;       /* Taller editorial card */
+    bottom: 23px !important;
+    padding: 32px 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+}
+.bh-sustainability-redesign > section.bh-sus-education-copy {
+  background: #edf5fb !important;
+  background-image: none !important;
+  margin: 0 !important;
+  padding: 0 24px 78px !important;
+}
+.bh-sustainability-redesign .bh-sus-education-inner {
+  padding: 0 30px !important;
+  box-sizing: border-box !important;
+}
+.bh-sustainability-redesign .bh-sus-education-inner p {
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  color: #424e5b !important;
+  font-size: clamp(12px, 1.03vw, 15px) !important;
+  line-height: 1.72 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+}
+.bh-sustainability-redesign .bh-sus-education-inner .bh-sus-accent {
+  color: #4f7d78 !important;
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+}
+@media (max-width: 1023px) {
+  .bh-sustainability-redesign > section.bh-sus-education-copy {
+    padding: 0 22px 64px !important;
+  }
+}
+@media (max-width: 640px) {
+  .bh-sustainability-redesign > section.bh-sus-education-copy {
+    padding: 0 20px 52px !important;
+  }
+  .bh-sustainability-redesign .bh-sus-education-inner {
+    padding: 0 4px !important;
+  }
+  .bh-sustainability-redesign .bh-sus-education-inner p {
+    font-size: 12px !important;
+    letter-spacing: .03em !important;
+    line-height: 1.65 !important;
+  }
+}
+
+
+/* ============================================================
+   SUSTAINABILITY V08 — INTRO TYPOGRAPHY + TEAL ITALIC HIGHLIGHTS
+   Isolated to the Sustainability page. Modify font-size here.
+   ============================================================ */
+.bh-sustainability-redesign > section:first-child > p {
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  font-size: clamp(22px, 2.05vw, 31px) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  line-height: 1.55 !important;
+  letter-spacing: normal !important;
+  color: #263547 !important;
+  max-width: 1050px !important;
+  margin-inline: auto !important;
+}
+.bh-sustainability-redesign > section:first-child > p > .bh-sus-intro-accent {
+  font-family: 'Libre Caslon Text', Georgia, serif !important;
+  font-size: inherit !important;
+  font-style: italic !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  color: #4f7d78 !important;
+  text-transform: none !important;
+}
+@media (max-width: 640px) {
+  .bh-sustainability-redesign > section:first-child > p {
+    font-size: clamp(18px, 4.6vw, 23px) !important;
+    line-height: 1.6 !important;
+    max-width: 100% !important;
+  }
+}
