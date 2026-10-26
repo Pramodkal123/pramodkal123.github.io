@@ -495,7 +495,7 @@
    ============================================================ */
 @media (min-width: 1024px) {
   .bh-sustainability-redesign .bh-sus-responsible-card {
-    width: min(35%, 400px) !important; /* Narrower = more visible photos */
+    width: min(35%, 385px) !important; /* Narrower = more visible photos */
     min-height: 350px !important;       /* Taller editorial card */
     bottom: 23px !important;
     padding: 32px 28px !important;
