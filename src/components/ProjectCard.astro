@@ -1,0 +1,5 @@
+---
+interface Props{title:string;location:string;image:string;href?:string;large?:boolean;}
+const {title,location,image,href='/projects/',large=false}=Astro.props;
+---
+<a class:list={['v2-project-card',{large}]} href={href} data-spotlight data-reveal><img src={image} alt={`Illustrative ${title} design concept`} loading="lazy" width="850" height="570"/><span class="project-shade" aria-hidden="true"></span><span class="project-caption"><strong>{title}</strong><small>{location}</small></span><span class="project-arrow" aria-hidden="true">↗</span><span class="project-cursor" aria-hidden="true">VIEW</span></a>

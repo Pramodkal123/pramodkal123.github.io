@@ -1,0 +1,14 @@
+---
+const links=[{label:'Home',href:'/'},{label:'About Us',href:'/about/'},{label:'Our Works',href:'/projects/'},{label:'Services',href:'/services/'},{label:'Guides',href:'/guides/'},{label:'Contact',href:'/contact/'}];
+const current=Astro.url.pathname;
+---
+<header class="site-header" data-site-header>
+ <div class="container header-inner">
+  <a class="brand" href="/" aria-label="Vigorous Property home"><span class="brand-monogram" aria-hidden="true">VP</span><span class="brand-text"><strong>VIGOROUS</strong><strong>PROPERTY</strong></span></a>
+  <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle><span></span><span></span><span></span></button>
+  <nav class="nav-links" id="primary-nav" aria-label="Primary navigation" data-nav>
+   {links.map(link=><a class:list={{active:current===link.href}} aria-current={current===link.href?'page':undefined} href={link.href}>{link.label}</a>)}
+   <a href="/contact/" class="btn btn-gold nav-quote">Get a Quote <span aria-hidden="true">→</span></a>
+  </nav>
+ </div>
+</header>

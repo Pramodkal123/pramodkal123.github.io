@@ -1,0 +1,5 @@
+---
+interface Props{title:string;description:string;href:string;icon:string;}
+const {title,description,href,icon}=Astro.props;
+---
+<a class="v2-service-card" href={href} data-reveal><span class="service-icon" aria-hidden="true">{icon}</span><h3>{title}</h3><p>{description}</p><span class="service-arrow" aria-hidden="true">↗</span></a>

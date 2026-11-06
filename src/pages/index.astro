@@ -1,16 +1,139 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/guides-editorial.css';
+import ProjectCard from '../components/ProjectCard.astro';
+import ProcessTimeline from '../components/ProcessTimeline.astro';
+const featuredServices = [
+  {title:'New Builds',description:'Bespoke construction projects delivered with quality and precision.',href:'/services/new-builds/',image:'/images/services/service-new-builds.webp',alt:'Illustrative new-build construction project'},
+  {title:'Renovations',description:'Transforming existing properties through comprehensive renovation work.',href:'/services/property-renovations/',image:'/images/services/service-renovations.webp',alt:'Illustrative property renovation project'},
+  {title:'Roofing & Roof Repairs',description:'Roof installations, repairs and maintenance to help protect your property.',href:'/services/',image:'/images/services/service-roofing.webp',alt:'Illustrative roofing work on a property'}
+];
+const projects=[
+ {title:'Victorian House Extension',location:'Illustrative project concept',image:'/images/project-extension.webp'},
+ {title:'Loft Conversion',location:'Illustrative project concept',image:'/images/project-loft.webp'},
+ {title:'Full Home Renovation',location:'Illustrative project concept',image:'/images/project-renovation.webp'}
+];
+const guides=[
+ // Replace the nulls with genuine metadata once each article is prepared/published.
+ // publishedAt: 'YYYY-MM-DD'; readingMinutes: number calculated from the final article.
+ {title:'Loft Conversion Ideas for London Homes',desc:'Inspiration and considerations for your space.',image:'/images/guide-loft.webp',publishedAt:null,readingMinutes:null},
+ {title:'House Extension Cost Guide',desc:'Understand the factors that affect your budget.',image:'/images/guide-extension.webp',publishedAt:null,readingMinutes:null},
+ {title:'Planning Permission for Extensions',desc:'What homeowners should know before building.',image:'/images/guide-permission.webp',publishedAt:null,readingMinutes:null}
+];
+const guideDate = (date) => date ? new Date(`${date}T12:00:00Z`).toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}) : '06 November 2026';
+const guideReadTime = (minutes) => Number.isFinite(minutes) && minutes > 0 ? `${minutes} min read` : '5 min read';
 ---
+<BaseLayout title="Vigorous Property | London Construction & Renovation" description="Explore loft conversions, house extensions and home renovations with Vigorous Property, a London construction company.">
+ <div class="hero-scroll-space" data-hero-track>
+  <section class="v2-hero vp-corporate-hero" data-hero>
+    <div class="hero-media" data-hero-media>
+      <img src="/images/hero-extension.webp" width="1100" height="720" fetchpriority="high" alt="Illustrative contemporary residential extension" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-content vp-corporate-content">
+      <p class="eyebrow hero-eyebrow" data-entrance="1">VIGOROUS PROPERTY <span>·</span> LONDON CONSTRUCTION</p>
+      <h1 class="hero-title vp-corporate-title"><span class="title-line"><span>BUILT WITH PRECISION.</span></span><span class="title-line gold-text"><span>BUILT TO LAST.</span></span></h1>
+      <div class="vp-corporate-rule" aria-hidden="true"></div>
+      <p class="hero-description" data-entrance="2">Professional construction, renovations, extensions and new builds across London.</p>
+      <div class="hero-actions vp-corporate-actions" data-entrance="3">
+        <a class="vp-hero-button vp-hero-button-primary" href="/contact/">REQUEST A QUOTE</a>
+        <a class="vp-hero-button vp-hero-button-secondary" href="/projects/">VIEW OUR WORK</a>
+      </div>
+    </div>
+    <span class="scroll-cue" aria-hidden="true">SCROLL TO EXPLORE <span>↓</span></span>
+  </section>
+</div>
+ <section class="trust-strip vp-glass-trust" aria-label="Our approach">
+  <div class="container vp-glass-trust-inner">
+    <div class="trust-items vp-trust-cards">
+      <div class="vp-trust-card">
+        <svg class="vp-trust-svg" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M5 23 24 7l19 16M10 21v20h28V21M19 41V28h10v13"/></svg>
+        <span class="vp-trust-text"><strong>Full-Service Construction</strong><small>From planning to completion</small></span>
+      </div>
+      <div class="vp-trust-card">
+        <svg class="vp-trust-svg" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 10h38v29H5zM5 20h38M5 30h38M15 10v10M33 10v10M24 20v10M15 30v9M33 30v9"/></svg>
+        <span class="vp-trust-text"><strong>Quality Craftsmanship</strong><small>Attention to every detail</small></span>
+      </div>
+      <div class="vp-trust-card">
+        <svg class="vp-trust-svg" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="m24 4 16 6v12c0 11-7 18-16 22C15 40 8 33 8 22V10zM16 24l5 5 11-12"/></svg>
+        <span class="vp-trust-text"><strong>A Trusted Partner</strong><small>Part of Technical Detail</small></span>
+      </div>
+      <div class="vp-trust-card">
+        <svg class="vp-trust-svg" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M5 24 24 8l19 16M10 22v20h28V22M24 34c-2-6 3-12 11-13 0 8-4 14-11 13ZM24 34l-4 6"/></svg>
+        <span class="vp-trust-text"><strong>Designed for Living</strong><small>Practical, lasting spaces</small></span>
+      </div>
+    </div>
+  </div>
+ </section>
+ <section class="about-v2 section-ivory"><div class="container about-layout"><div class="about-copy" data-reveal><p class="eyebrow">ABOUT VIGOROUS PROPERTY</p><h2>More than<br/>construction.<br/><em>It’s personal.</em></h2><p>We combine craftsmanship, clear communication and meticulous project management to create exceptional homes. As part of Technical Detail, we bring a commitment to quality into every project.</p><a class="btn btn-gold" href="/about/">About Us <span aria-hidden="true">→</span></a></div><div class="about-visual" data-reveal="image"><img class="about-main" src="/images/about-interior.webp" width="800" height="540" loading="lazy" alt="Illustrative renovated contemporary interior"/><img class="about-inset" src="/images/project-extension.webp" width="600" height="340" loading="lazy" alt="Illustrative extension design"/></div></div></section>
+ <section class="vp-services-gallery" aria-labelledby="vp-services-heading">
+  <div class="container">
+    <div class="vp-services-gallery-heading" data-reveal>
+      <p class="eyebrow">OUR SERVICES</p>
+      <h2 id="vp-services-heading">CONSTRUCTION &amp; RENOVATION SERVICES</h2>
+      <p>From new builds to comprehensive renovations and roofing, discover the construction services we offer.</p>
+    </div>
+    <div class="vp-services-gallery-grid">
+      {featuredServices.map(service => (
+        <a class="vp-services-gallery-card" href={service.href} aria-label={`Explore ${service.title}`}>
+          <img src={service.image} alt={service.alt} loading="lazy" width="720" height="900" />
+          <div class="vp-services-gallery-card-content">
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+            <span class="vp-services-gallery-explore">Explore Now <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      ))}
+    </div>
+    <div class="vp-services-gallery-footer">
+      <a class="vp-services-gallery-all" href="/services/">EXPLORE MORE SERVICES <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+ </section>
+ <section class="work-v2 section-ivory"><div class="container"><div class="split-intro work-intro"><div data-reveal><p class="eyebrow">FEATURED PROJECTS</p><h2>Real spaces.<br/>Extraordinary results.</h2></div><div class="split-intro-aside" data-reveal><p>Explore a selection of our work, from contemporary extensions to full home renovations. Project references are illustrative until client-approved examples are supplied.</p><a class="inline-link" href="/projects/">View All Works <span>→</span></a></div></div><div class="v2-project-grid"><ProjectCard {...projects[0]} large/><div class="project-stack"><ProjectCard {...projects[1]}/><ProjectCard {...projects[2]}/></div></div></div></section>
+ <ProcessTimeline />
+ <!-- VP Guides — editorial feature + two supporting cards; current guide content preserved -->
+ <section class="vp-guides" aria-labelledby="vp-guides-heading">
+   <div class="container">
+     <div class="vp-guides-heading-row">
+       <div class="vp-guides-heading-copy" data-reveal>
+         <p class="eyebrow">OUR GUIDES</p>
+         <h2 id="vp-guides-heading">Guidance for your<br class="vp-guides-desktop-break"/> home project.</h2>
+       </div>
+       <div class="vp-guides-heading-aside" data-reveal>
+         <p>Expert insights, practical advice and clear guidance to help you plan, build and improve your home with confidence.</p>
+         <a class="inline-link" href="/guides/">View All Guides <span aria-hidden="true">→</span></a>
+       </div>
+     </div>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+     <div class="vp-guides-layout">
+       <!-- Article metadata is intentionally unconfirmed until real guides exist. -->
+       <a class="vp-guide-feature" href="/guides/" aria-label={`Explore guide: ${guides[2].title}`} data-reveal>
+         <img src={guides[2].image} alt="Illustrative construction plans and planning documents" width="880" height="660" loading="lazy" decoding="async"/>
+         <div class="vp-guide-feature-shade" aria-hidden="true"></div>
+         <div class="vp-guide-feature-copy">
+           <h3>{guides[2].title}</h3>
+           <p>{guides[2].desc}</p>
+           <span class="vp-guide-meta vp-guide-meta-feature"><span>{guideReadTime(guides[2].readingMinutes)}</span><span aria-hidden="true">·</span><span>{guideDate(guides[2].publishedAt)}</span></span>
+         </div>
+       </a>
+
+       <div class="vp-guides-secondary">
+         {guides.slice(0,2).map(g => (
+           <a class="vp-guide-secondary" href="/guides/" aria-label={`Explore guide: ${g.title}`} data-reveal>
+             <div class="vp-guide-secondary-media">
+               <img src={g.image} width="440" height="320" loading="lazy" decoding="async" alt="Illustrative residential construction project"/>
+             </div>
+             <div class="vp-guide-secondary-copy">
+               <h3>{g.title}</h3>
+               <p>{g.desc}</p>
+               <span class="vp-guide-meta vp-guide-meta-secondary"><span>{guideReadTime(g.readingMinutes)}</span><span aria-hidden="true">·</span><span>{guideDate(g.publishedAt)}</span></span>
+             </div>
+           </a>
+         ))}
+       </div>
+     </div>
+   </div>
+ </section>
+ <section class="closing-v2" data-reveal><img src="/images/home-cta.webp" alt="" loading="lazy" width="1100" height="720"/><div class="container closing-content"><div><p class="eyebrow">READY TO START?</p><h2>Let’s build something<br/>remarkable.</h2></div><div><p>Whether you’re planning an extension, renovation or a completely new build, we're here to help.</p><a class="btn btn-gold" href="/contact/">Get a Quote <span aria-hidden="true">→</span></a></div></div></section>
+</BaseLayout>
