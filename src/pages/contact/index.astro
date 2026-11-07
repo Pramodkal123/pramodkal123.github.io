@@ -1,6 +1,106 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/contact.css';
+
+// Contact details are intentionally unverified. Replace only after client confirmation.
+const contactInfo = {
+  location: 'London, United Kingdom',
+  phone: null as string | null,
+  email: null as string | null,
+};
+const enquiryEndpointConfigured = false;
+const projectTypes = [
+  'New Builds', 'House Extensions', 'Loft Conversions',
+  'Property Renovations', 'Kitchen Renovations', 'Bathroom Renovations',
+  'Roofing & Roof Repairs', 'Other Enquiry',
+];
 ---
-<BaseLayout title="Contact | Vigorous Property" description="Contact and quote-request details will be added once the client confirms their preferred channels.">
-  <section class="interior-page"><div class="container"><p class="eyebrow">VIGOROUS PROPERTY</p><h1>Let’s discuss your project.</h1><p>Contact and quote-request details will be added once the client confirms their preferred channels.</p><p class="preview-note">This page is a development placeholder. Its full design will follow the approved homepage.</p><a href="/" class="btn btn-gold">Back to homepage <span aria-hidden="true">→</span></a></div></section>
+<BaseLayout title="Contact Vigorous Property | Discuss Your London Construction Project" description="Get in touch with Vigorous Property to discuss construction, renovations, extensions and property development enquiries across London.">
+  <section class="vp-contact-hero" aria-labelledby="vp-contact-title">
+    <!-- Temporary illustrative photo. Swap for /images/contact/contact-hero.webp once supplied. -->
+    <div class="vp-contact-hero-photo" role="img" aria-label="Illustrative photograph of a contemporary property extension"></div>
+    <div class="vp-contact-hero-shade" aria-hidden="true"></div>
+    <div class="container vp-contact-hero-inner">
+      <p class="eyebrow vp-contact-hero-kicker">CONTACT US</p>
+      <h1 id="vp-contact-title"><span>LET'S DISCUSS</span><span>YOUR PROJECT.</span></h1>
+      <span class="vp-contact-hero-line" aria-hidden="true"></span>
+      <p class="vp-contact-hero-lead">Get in touch with our team to discuss your construction, renovation or development plans across London.</p>
+    </div>
+    <a href="#contact-form" class="vp-contact-scroll" aria-label="Go to contact form">GET IN TOUCH <span aria-hidden="true">↓</span></a>
+  </section>
+
+  <section class="vp-contact-main" aria-labelledby="contact-form-heading">
+    <div class="container vp-contact-content">
+      <div class="vp-contact-form-side" data-reveal>
+        <p class="eyebrow vp-contact-gold-eyebrow">GET IN TOUCH</p>
+        <h2 id="contact-form-heading">SEND US A MESSAGE</h2>
+        <p class="vp-contact-intro">Tell us about your project and we'll get back to you as soon as possible.</p>
+        <form id="contact-form" class="vp-contact-form" action="" method="post" data-contact-demo="true">
+          <div class="vp-contact-fields-two">
+            <div class="vp-contact-field"><label for="contact-first">First Name <span aria-label="required">*</span></label><input id="contact-first" name="firstName" type="text" autocomplete="given-name" placeholder="First Name *" minlength="2" maxlength="100" required /></div>
+            <div class="vp-contact-field"><label for="contact-last">Last Name <span aria-label="required">*</span></label><input id="contact-last" name="lastName" type="text" autocomplete="family-name" placeholder="Last Name *" minlength="2" maxlength="100" required /></div>
+            <div class="vp-contact-field"><label for="contact-email">Email Address <span aria-label="required">*</span></label><input id="contact-email" name="email" type="email" autocomplete="email" placeholder="Email Address *" maxlength="254" required /></div>
+            <div class="vp-contact-field"><label for="contact-phone">Phone Number <small>(optional)</small></label><input id="contact-phone" name="phone" type="tel" autocomplete="tel" placeholder="Phone Number" maxlength="40" /></div>
+          </div>
+          <div class="vp-contact-field"><label for="contact-type">Project Type <span aria-label="required">*</span></label><select id="contact-type" name="projectType" required><option value="" selected disabled>Project Type *</option>{projectTypes.map(type => <option value={type}>{type}</option>)}</select></div>
+          <div class="vp-contact-field"><label for="contact-details">Project Details <span aria-label="required">*</span></label><textarea id="contact-details" name="projectDetails" rows="6" minlength="10" maxlength="5000" placeholder="Project Details *" required></textarea></div>
+          <p class="vp-contact-privacy">Please do not include sensitive personal information. Enquiries will be handled according to the site's privacy policy once published. <span>Privacy policy link pending client approval.</span></p>
+          <div class="vp-contact-form-actions">
+            <button class="btn btn-gold vp-contact-submit" type="submit" disabled={!enquiryEndpointConfigured} aria-describedby="vp-contact-status">SEND MESSAGE <span aria-hidden="true">→</span></button>
+            <p class="vp-contact-status" id="vp-contact-status" role="status">Preview only — enquiry submission is not active. A secure form provider must be configured before messages can be sent.</p>
+          </div>
+        </form>
+      </div>
+      <aside class="vp-contact-info" aria-label="Contact information" data-reveal>
+        <div class="vp-contact-info-item">
+          <span class="vp-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+          <div><h3>Our Location</h3><p>{contactInfo.location}</p><small>Service area only — no office address published.</small></div>
+        </div>
+        <div class="vp-contact-info-item">
+          <span class="vp-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.8v3a2 2 0 0 1-2.2 2A19.6 19.6 0 0 1 2.2 4.2 2 2 0 0 1 4.2 2h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.8L7.3 10a16 16 0 0 0 6.7 6.7l1.5-1.8a2 2 0 0 1 1.8-.6l3 .5a2 2 0 0 1 1.7 2Z"/></svg></span>
+          <div><h3>Call Us</h3>{contactInfo.phone ? <a href={`tel:${contactInfo.phone.replace(/\s/g,'')}`}>{contactInfo.phone}</a> : <p class="vp-contact-pending">Telephone number awaiting confirmation</p>}</div>
+        </div>
+        <div class="vp-contact-info-item">
+          <span class="vp-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></svg></span>
+          <div><h3>Email Us</h3>{contactInfo.email ? <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a> : <p class="vp-contact-pending">Enquiry email awaiting confirmation</p>}</div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="vp-contact-map-section" aria-label="Vigorous Property London service area">
+    <div class="container">
+      <div class="vp-contact-map-frame" id="contact-map">
+        <div class="vp-contact-map-consent">
+          <span class="vp-contact-map-marker" aria-hidden="true">⌖</span>
+          <h2>Serving London</h2>
+          <p>Vigorous Property operates across London. The map displays the general service area, not a business office or registered address.</p>
+          <button type="button" id="vp-load-map" class="btn btn-gold">LOAD GOOGLE MAP <span aria-hidden="true">→</span></button>
+          <small>Loading the map connects your browser to Google and may allow Google to set cookies. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing-v2 vp-contact-closing" aria-label="Ready to get started" data-reveal>
+    <img src="/images/home-cta.webp" alt="" loading="lazy" width="1100" height="720"/>
+    <div class="container closing-content">
+      <div><p class="eyebrow">READY TO GET STARTED?</p><h2>LET'S BUILD<br/>TOGETHER.</h2></div>
+      <div><p>From initial ideas to final delivery, we're here to discuss your construction project.</p><a class="btn btn-gold" href="#contact-form">ENQUIRY FORM <span aria-hidden="true">↑</span></a></div>
+    </div>
+  </section>
+  <script>
+    const mapButton = document.getElementById('vp-load-map');
+    mapButton?.addEventListener('click', () => {
+      const mapContainer = document.getElementById('contact-map');
+      if (!mapContainer) return;
+      const frame = document.createElement('iframe');
+      frame.src = 'https://www.google.com/maps?q=London%2C%20United%20Kingdom&z=11&output=embed';
+      frame.title = 'Google Map of London, United Kingdom — general service area, not an office address';
+      frame.loading = 'lazy';
+      frame.referrerPolicy = 'strict-origin-when-cross-origin';
+      frame.setAttribute('allowfullscreen', '');
+      mapContainer.replaceChildren(frame);
+    });
+  </script>
 </BaseLayout>

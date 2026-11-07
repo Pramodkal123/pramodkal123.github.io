@@ -1,6 +1,63 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/services.css';
+import { publishedServices, isServiceLinkEnabled } from '../../data/services';
+
+/** The supplied source project has no dedicated services-hero.webp yet. */
+const heroImage = '/images/process/process-build.webp';
 ---
-<BaseLayout title="Our Services | Vigorous Property" description="Explore our loft conversions, extensions, renovations and new builds.">
-  <section class="interior-page"><div class="container"><p class="eyebrow">VIGOROUS PROPERTY</p><h1>Construction services for considered homes.</h1><p>Explore our loft conversions, extensions, renovations and new builds.</p><p class="preview-note">This page is a development placeholder. Its full design will follow the approved homepage.</p><a href="/" class="btn btn-gold">Back to homepage <span aria-hidden="true">→</span></a></div></section>
+<BaseLayout
+  title="Construction & Renovation Services in London | Vigorous Property"
+  description="Explore Vigorous Property's construction and renovation services in London, including new builds, house extensions, loft conversions, property renovations and roofing."
+>
+  <!-- Imagery is illustrative. Do not present it as documentary evidence of client projects. -->
+  <section class="vp-services-hero" aria-labelledby="vp-services-page-title">
+    <div class="vp-services-hero-photo">
+      <img src={heroImage} alt="Illustrative construction site with building work in progress" width="1600" height="1000" fetchpriority="high" decoding="async" />
+    </div>
+    <div class="vp-services-hero-shade" aria-hidden="true"></div>
+    <div class="container vp-services-hero-inner">
+      <p class="eyebrow vp-services-hero-kicker">OUR SERVICES</p>
+      <h1 id="vp-services-page-title"><span>CONSTRUCTION &amp;</span><span>RENOVATION SERVICES.</span></h1>
+      <span class="vp-services-hero-line" aria-hidden="true"></span>
+      <p class="vp-services-hero-lead">A comprehensive range of construction and property services, delivered with quality, care and precision across London.</p>
+    </div>
+    <a class="vp-services-scroll" href="#all-services" aria-label="Explore our services">EXPLORE OUR SERVICES <span aria-hidden="true">↓</span></a>
+  </section>
+
+  <section class="vp-services-gallery vp-services-directory" id="all-services" aria-labelledby="vp-services-directory-title">
+    <div class="container">
+      <div class="vp-services-gallery-grid vp-services-directory-grid">
+        {publishedServices.map((service) => {
+          const content = <>
+            <img src={service.image} alt={service.imageAlt} loading="lazy" decoding="async" width="720" height="900" />
+            <div class="vp-services-gallery-card-content">
+              <h2>{service.title}</h2>
+              <p>{service.description}</p>
+              <span class="vp-services-gallery-explore" aria-hidden="true">
+                {isServiceLinkEnabled(service) ? 'Explore Now' : 'Details Coming Soon'} <span aria-hidden="true">→</span>
+              </span>
+            </div>
+          </>;
+          return isServiceLinkEnabled(service)
+            ? <a class="vp-services-gallery-card" href={service.route} aria-label={`Explore ${service.title}`} data-service-slug={service.slug}>{content}</a>
+            : <article class="vp-services-gallery-card vp-services-card-unavailable" aria-label={`${service.title} — detailed page coming soon`} data-service-slug={service.slug}>{content}</article>;
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="closing-v2 vp-services-closing" aria-labelledby="vp-services-closing-title">
+    <img src="/images/home-cta.webp" alt="" loading="lazy" decoding="async" width="1100" height="720" />
+    <div class="container closing-content">
+      <div>
+        <p class="eyebrow">READY TO GET STARTED?</p>
+        <h2 id="vp-services-closing-title">LET'S BUILD TOGETHER.</h2>
+      </div>
+      <div>
+        <p>From initial ideas to final delivery, we're here to discuss your construction project.</p>
+        <a class="btn btn-gold" href="/contact/">REQUEST A QUOTE <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

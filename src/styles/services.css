@@ -1,0 +1,31 @@
+/* Vigorous Property — Services directory. No shared/homepage CSS modifications. */
+.vp-services-hero{position:relative;isolation:isolate;height:100vh;min-height:640px;overflow:hidden;color:#fff;background:var(--navy)}
+.vp-services-hero-photo,.vp-services-hero-shade{position:absolute;inset:0;z-index:-1}
+.vp-services-hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 48%;animation:vp-services-hero-arrive 1.6s ease-out both}
+.vp-services-hero-shade{background:linear-gradient(90deg,rgba(5,17,33,.94) 0%,rgba(5,17,33,.73) 42%,rgba(5,17,33,.22) 100%),linear-gradient(0deg,#07182e55,transparent 60%)}
+.vp-services-hero-inner{height:100%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding-top:100px;padding-bottom:72px}
+.vp-services-hero-kicker{color:#f7f5f0;font-size:12px;letter-spacing:.15em;font-weight:700;margin-bottom:27px;animation:vp-services-rise .7s .12s both}
+.vp-services-hero h1{font-family:'Barlow Condensed',Impact,'Arial Narrow',sans-serif;font-size:clamp(60px,7.4vw,124px);font-weight:700;line-height:.98;letter-spacing:-.018em;max-width:1200px;margin:0 0 22px}
+.vp-services-hero h1 span{display:block;animation:vp-services-rise .85s both}
+.vp-services-hero h1 span:nth-child(2){animation-delay:.16s}
+.vp-services-hero-line{display:block;width:74px;height:3px;flex:none;background:#d6ac60;margin-bottom:23px;animation:vp-services-rise .85s .4s both}
+.vp-services-hero-lead{font:500 clamp(15px,1.2vw,18px)/1.65 var(--sans);max-width:545px;margin:0;animation:vp-services-rise .85s .32s both}
+.vp-services-scroll{position:absolute;right:4.8%;bottom:52px;display:inline-flex;align-items:center;gap:16px;font-size:9px;font-weight:400;letter-spacing:2px;color:#ffffff99;text-decoration:none;transition:color .2s ease}
+.vp-services-scroll span{font-size:19px;color:var(--gold);line-height:1}
+.vp-services-scroll:hover,.vp-services-scroll:focus-visible{color:#fff}
+.vp-services-scroll:focus-visible{outline:2px solid var(--gold-light);outline-offset:7px}
+/* Preserve the exact shared homepage photo-card rules. Only grid behaviour and
+   unlinked card semantics are tailored to this directory. */
+.vp-services-directory{background:#fff;scroll-margin-top:0}
+.vp-services-directory-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.vp-services-directory .vp-services-gallery-card h2{color:#fff;font-family:var(--display,'Barlow Condensed',Impact,sans-serif);font-weight:700;font-size:clamp(30px,2.8vw,42px);line-height:1.05;margin:0 0 10px}
+.vp-services-card-unavailable{cursor:default}
+.vp-services-card-unavailable .vp-services-gallery-explore{font-size:12px;color:#fffdf6}
+.vp-services-card-unavailable .vp-services-gallery-explore span{color:var(--gold-light)}
+/* Closing CTA borrows .closing-v2 and .closing-content directly from global.css. */
+.vp-services-closing .closing-content h2{font-family:var(--display,'Barlow Condensed',Impact,sans-serif)}
+@keyframes vp-services-hero-arrive{from{transform:scale(1.075);filter:brightness(.7)}to{transform:scale(1);filter:brightness(1)}}
+@keyframes vp-services-rise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){.vp-services-hero{height:100vh;min-height:620px}.vp-services-hero h1{font-size:clamp(60px,9.8vw,94px)}.vp-services-directory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:590px){.vp-services-hero{height:100svh;min-height:660px}.vp-services-hero-inner{padding-top:105px;padding-bottom:45px}.vp-services-hero-kicker{font-size:10px;letter-spacing:.1em;margin-bottom:22px}.vp-services-hero h1{font-size:clamp(49px,11.5vw,76px);line-height:.99}.vp-services-hero-lead{font-size:13px}.vp-services-scroll{display:none}.vp-services-directory-grid{grid-template-columns:1fr;gap:17px}.vp-services-directory .vp-services-gallery-card h2{font-size:36px}}
+@media(prefers-reduced-motion:reduce){.vp-services-hero-photo img,.vp-services-hero-kicker,.vp-services-hero h1 span,.vp-services-hero-line,.vp-services-hero-lead{animation:none!important}.vp-services-scroll{transition:none}}
