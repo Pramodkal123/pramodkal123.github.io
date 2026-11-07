@@ -1,6 +1,180 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/projects.css';
+import {projects, projectCategories, projectLocations, PROJECT_NAVIGATION_ENABLED, PROJECTS_INITIAL_COUNT, futureProjectHref} from '../../data/projects';
+const total = projects.length;
 ---
-<BaseLayout title="Our Work | Vigorous Property" description="Our portfolio and case studies will be populated with approved client projects.">
-  <section class="interior-page"><div class="container"><p class="eyebrow">VIGOROUS PROPERTY</p><h1>Projects shaped by detail.</h1><p>Our portfolio and case studies will be populated with approved client projects.</p><p class="preview-note">This page is a development placeholder. Its full design will follow the approved homepage.</p><a href="/" class="btn btn-gold">Back to homepage <span aria-hidden="true">→</span></a></div></section>
+<BaseLayout title="Our Work | Construction Projects in London | Vigorous Property" description="Explore the Vigorous Property construction portfolio layout. This preview currently contains illustrative example projects, pending client-approved case studies.">
+  <section class="work-hero" aria-labelledby="work-page-title">
+    <img class="work-hero-photo" src="/images/our-works-hero.webp" alt="Illustrative construction site with modern building works" width="1100" height="720" fetchpriority="high" />
+    <div class="work-hero-shade" aria-hidden="true"></div>
+    <div class="container work-hero-inner">
+      <p class="work-hero-eyebrow">OUR WORK</p>
+      <h1 id="work-page-title">BUILT WITH PURPOSE.<br />DELIVERED WITH PRECISION.</h1>
+      <span class="work-hero-rule" aria-hidden="true"></span>
+      <p class="work-hero-description">Explore a selection of construction, renovation and development projects across London.</p>
+    </div>
+    <a class="work-hero-scroll" href="#work-directory-title" aria-label="Explore our projects">EXPLORE OUR PROJECTS <span aria-hidden="true">↓</span></a>
+  </section>
+
+  <section class="work-directory" aria-labelledby="work-directory-title" data-project-directory data-initial-count={PROJECTS_INITIAL_COUNT}>
+    <div class="container">
+      <div class="work-directory-heading">
+        <div class="work-directory-title-wrap">
+          <h2 id="work-directory-title">ALL PROJECTS</h2>
+          <span class="work-project-total" data-project-total aria-live="polite">({total} Projects)</span>
+        </div>
+        <button class="work-filter-trigger" type="button" aria-expanded="false" aria-controls="work-filter-panel" data-filter-trigger>
+          <span>FILTERS</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 17h16M8 4v6M16 14v6"/><circle cx="8" cy="7" r="2" fill="white"/><circle cx="16" cy="17" r="2" fill="white"/></svg>
+        </button>
+      </div>
+
+      <div class="work-filter-shell" id="work-filter-panel" data-filter-panel inert>
+        <div class="work-filter-panel-content">
+          <div class="work-filter-columns">
+            <fieldset class="work-filter-group work-filter-types">
+              <legend>Project Type</legend>
+              {projectCategories.map(category => <label class="work-checkbox"><input type="checkbox" name="project-type" value={category} data-project-type /><span>{category}</span></label>)}
+            </fieldset>
+            <div class="work-filter-group work-filter-location">
+              <label for="work-location-select">Location</label>
+              <select id="work-location-select" data-project-location>
+                <option value="">All London Areas</option>
+                {projectLocations.map(location => <option value={location}>{location}</option>)}
+              </select>
+            </div>
+            <fieldset class="work-filter-group work-filter-status">
+              <legend>Project Status</legend>
+              <label class="work-checkbox"><input type="radio" name="project-status" value="" checked data-project-status/><span>All Projects</span></label>
+              <label class="work-checkbox"><input type="radio" name="project-status" value="Completed" data-project-status/><span>Completed</span></label>
+              <label class="work-checkbox"><input type="radio" name="project-status" value="In Progress" data-project-status/><span>In Progress</span></label>
+            </fieldset>
+            <div class="work-filter-actions">
+              <button type="button" class="work-clear-button" data-clear-filters><span aria-hidden="true">↻</span> Clear Filters</button>
+              <button type="button" class="work-apply-button" data-close-filters>Done <span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-active-filters" data-active-filters aria-label="Active project filters"></div>
+      <p class="work-preview-notice"><span class="work-preview-dot" aria-hidden="true"></span><strong>Portfolio preview:</strong> All ten project entries and locations below are illustrative examples, not verified Vigorous Property commissions.</p>
+
+      <div class="work-project-grid" data-project-grid>
+        {projects.map((project, index) => {
+          const link = PROJECT_NAVIGATION_ENABLED && project.publishApproved;
+          const href = futureProjectHref(project);
+          return <article
+            class:list={['work-project-card',{'is-initially-hidden':index >= PROJECTS_INITIAL_COUNT}]}
+            data-project-card
+            data-category={project.category}
+            data-location={project.location}
+            data-status={project.status}
+            data-project-slug={project.slug}
+          >
+            {link ? <a class="work-project-image" href={href} aria-label={`View ${project.title}`}><img src={project.image} alt={project.imageAlt} width="800" height="600" loading="lazy" /></a>
+            : <div class="work-project-image"><img src={project.image} alt={project.imageAlt} width="800" height="600" loading="lazy" /></div>}
+            <div class="work-project-card-body">
+              <p class="work-project-category">{project.category}</p>
+              {link ? <h3><a href={href}>{project.title}</a></h3> : <h3>{project.title}</h3>}
+              <p class="work-project-location"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.2"/></svg>{project.location.toUpperCase()}, LONDON</p>
+              <span class="work-demo-tag">DEMONSTRATION PROJECT</span>
+            </div>
+          </article>;
+        })}
+      </div>
+      <div class="work-empty-state" data-empty-state hidden role="status">
+        <h3>NO PROJECTS MATCH THESE FILTERS.</h3>
+        <p>Try another project type, location or status.</p>
+        <button type="button" class="work-empty-clear" data-empty-clear>Clear Filters <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="work-more-wrap"><button class="work-load-more" type="button" data-load-more>Load More Projects <span aria-hidden="true">＋</span></button></div>
+    </div>
+  </section>
+
+  <section class="closing-v2 work-closing" aria-labelledby="work-cta-title">
+    <img src="/images/our-work-cta.webp" alt="" loading="lazy" width="1100" height="720" />
+    <div class="container closing-content">
+      <div><p class="eyebrow">PLANNING A PROJECT?</p><h2 id="work-cta-title">LET'S BUILD TOGETHER.</h2></div>
+      <div><p>From initial ideas to final delivery, we're here to discuss your construction project.</p><a class="btn btn-gold" href="/contact/">REQUEST A QUOTE <span aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
 </BaseLayout>
+
+<script>
+  function initProjectDirectory() {
+    const root = document.querySelector<HTMLElement>('[data-project-directory]');
+    if (!root || root.dataset.ready === 'true') return;
+    root.dataset.ready = 'true';
+    const cards = [...root.querySelectorAll<HTMLElement>('[data-project-card]')];
+    const categoryBoxes = [...root.querySelectorAll<HTMLInputElement>('[data-project-type]')];
+    const statusInputs = [...root.querySelectorAll<HTMLInputElement>('[data-project-status]')];
+    const location = root.querySelector<HTMLSelectElement>('[data-project-location]')!;
+    const total = root.querySelector<HTMLElement>('[data-project-total]')!;
+    const panel = root.querySelector<HTMLElement>('[data-filter-panel]')!;
+    const trigger = root.querySelector<HTMLButtonElement>('[data-filter-trigger]')!;
+    const more = root.querySelector<HTMLButtonElement>('[data-load-more]')!;
+    const active = root.querySelector<HTMLElement>('[data-active-filters]')!;
+    const empty = root.querySelector<HTMLElement>('[data-empty-state]')!;
+    const initialCount = Number(root.dataset.initialCount) || 6;
+    let showCount = initialCount;
+    const selectedTypes = () => categoryBoxes.filter(box => box.checked).map(box => box.value);
+    const selectedStatus = () => statusInputs.find(input => input.checked)?.value ?? '';
+    const setPanel = (open: boolean) => {
+      trigger.setAttribute('aria-expanded', String(open));
+      panel.classList.toggle('is-open', open);
+      panel.inert = !open;
+    };
+    const clearFilters = () => {
+      categoryBoxes.forEach(box => {box.checked = false;});
+      location.value = '';
+      statusInputs.forEach(input => {input.checked = input.value === '';});
+      showCount = initialCount;
+      update();
+    };
+    const addChip = (label: string, remove: () => void) => {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'work-filter-chip';
+      chip.textContent = `${label} ×`;
+      chip.setAttribute('aria-label', `Remove ${label} filter`);
+      chip.addEventListener('click', () => {remove(); showCount = initialCount; update();});
+      active.append(chip);
+    };
+    function update() {
+      const types = selectedTypes();
+      const status = selectedStatus();
+      const place = location.value;
+      const matching = cards.filter(card =>
+        (!types.length || types.includes(card.dataset.category ?? '')) &&
+        (!status || card.dataset.status === status) &&
+        (!place || card.dataset.location === place)
+      );
+      cards.forEach(card => {card.hidden = !matching.includes(card) || matching.indexOf(card) >= showCount;});
+      total.textContent = `(${matching.length} ${matching.length === 1 ? 'Project' : 'Projects'})`;
+      empty.hidden = matching.length !== 0;
+      more.hidden = matching.length <= showCount;
+      active.replaceChildren();
+      categoryBoxes.filter(box => box.checked).forEach(box => addChip(box.value, () => {box.checked = false;}));
+      if (place) addChip(place, () => {location.value = '';});
+      if (status) addChip(status, () => {statusInputs.forEach(input => {input.checked = input.value === '';});});
+    }
+    trigger.addEventListener('click', () => setPanel(trigger.getAttribute('aria-expanded') !== 'true'));
+    root.querySelector('[data-close-filters]')?.addEventListener('click', () => {setPanel(false); trigger.focus();});
+    root.querySelector('[data-clear-filters]')?.addEventListener('click', clearFilters);
+    root.querySelector('[data-empty-clear]')?.addEventListener('click', clearFilters);
+    categoryBoxes.forEach(box => box.addEventListener('change', () => {showCount = initialCount; update();}));
+    statusInputs.forEach(input => input.addEventListener('change', () => {showCount = initialCount; update();}));
+    location.addEventListener('change', () => {showCount = initialCount; update();});
+    more.addEventListener('click', () => {showCount += initialCount; update();});
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && trigger.getAttribute('aria-expanded') === 'true') {setPanel(false); trigger.focus();}
+    });
+    setPanel(false);
+    root.classList.add('work-filter-ready');
+    update();
+  }
+  initProjectDirectory();
+  document.addEventListener('astro:page-load', initProjectDirectory);
+</script>
