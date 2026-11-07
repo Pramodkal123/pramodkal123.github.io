@@ -1,0 +1,104 @@
+---
+const stages = [
+  {number:'01', title:'Discover', description:'We take time to understand your goals, ideas and budget.', image:'/images/process/process-discover.webp', fallback:'/images/about-interior.webp'},
+  {number:'02', title:'Plan', description:'We develop the design, technical details and schedule.', image:'/images/process/process-plan.webp', fallback:'/images/guide-permission.webp'},
+  {number:'03', title:'Build', description:'Our team brings your project to life with care and precision.', image:'/images/process/process-build.webp', fallback:'/images/project-extension.webp'},
+  {number:'04', title:'Deliver', description:'We hand over a finished space built to last.', image:'/images/process/process-deliver.webp', fallback:'/images/extension.webp'},
+];
+---
+<section class="vp-process" id="our-process" aria-labelledby="vp-process-title" data-vp-process>
+  <div class="vp-process-sticky">
+    <div class="container vp-process-layout">
+      <div class="vp-process-copy">
+        <p class="eyebrow">OUR PROCESS</p>
+        <h2 id="vp-process-title">A simpler way<br />to build better.</h2>
+        <p class="vp-process-summary">We make your project straightforward and transparent, with a clear process from start to finish.</p>
+        <div class="vp-process-guide" aria-hidden="true"><span class="vp-process-guide-line"></span>SCROLL TO FOLLOW THE PROCESS</div>
+      </div>
+      <div class="vp-process-stage-window" data-vp-process-window>
+        <div class="vp-process-rail" aria-hidden="true"><span class="vp-process-rail-fill" data-vp-process-fill></span></div>
+        <div class="vp-process-stages" data-vp-process-track>
+          {stages.map((stage,i) => (
+            <div class="vp-process-stage" data-vp-process-stage data-stage-index={i}>
+              <div class="vp-process-node" aria-hidden="true">{stage.number}</div>
+              <article class="vp-process-photo-card">
+                <img src={stage.image} data-fallback={stage.fallback} alt={`Illustrative image showing the ${stage.title.toLowerCase()} stage of a building project`} loading="lazy" width="720" height="900" />
+                <div class="vp-process-photo-copy">
+                  <h3>{stage.title}</h3>
+                  <p>{stage.description}</p>
+                </div>
+              </article>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  const section = document.querySelector<HTMLElement>('[data-vp-process]');
+  if (section) {
+    const mask = section.querySelector<HTMLElement>('[data-vp-process-window]');
+    const track = section.querySelector<HTMLElement>('[data-vp-process-track]');
+    const fill = section.querySelector<HTMLElement>('[data-vp-process-fill]');
+    const stages = [...section.querySelectorAll<HTMLElement>('[data-vp-process-stage]')];
+    const compact = window.matchMedia('(max-width: 1050px), (prefers-reduced-motion: reduce)');
+    // New photographic assets are optional during development: fall back to the existing illustrations.
+    section.querySelectorAll<HTMLImageElement>('img[data-fallback]').forEach(img => {
+      img.addEventListener('error', () => {
+        const fallback = img.dataset.fallback;
+        if (fallback && !img.src.endsWith(fallback)) img.src = fallback;
+      }, {once:true});
+    });
+    if (mask && track && fill) {
+      let travel = 0;
+      let scrollDistance = 0;
+      let ticking = false;
+      const clamp = (v:number) => Math.max(0, Math.min(1, v));
+      function measure() {
+        if (compact.matches) {
+          section.style.removeProperty('height');
+          track.style.removeProperty('transform');
+          fill.style.removeProperty('transform');
+          stages.forEach(s => s.classList.remove('is-current'));
+          return;
+        }
+        const maskHeight = mask.clientHeight;
+        // Prevent clipping the first and last image when the fixed viewport is active.
+        travel = Math.max(0, track.scrollHeight - maskHeight);
+        scrollDistance = Math.max(1, travel + 100);
+        section.style.height = `${window.innerHeight + scrollDistance}px`;
+        update();
+      }
+      function update() {
+        ticking = false;
+        if (compact.matches) return;
+        const sectionTop = section.getBoundingClientRect().top;
+        const progress = clamp(-sectionTop / scrollDistance);
+        const moved = progress * travel;
+        track.style.transform = `translate3d(0, ${-moved}px, 0)`;
+        fill.style.transform = `scaleY(${progress})`;
+        // Highlight the stage closest to the central viewing position.
+        const focus = moved + mask.clientHeight * .48;
+        let current = 0;
+        let distance = Infinity;
+        stages.forEach((stage,i) => {
+          const midpoint = stage.offsetTop + stage.offsetHeight * .5;
+          const d = Math.abs(midpoint - focus);
+          if (d < distance) {distance = d; current = i;}
+        });
+        stages.forEach((stage,i) => stage.classList.toggle('is-current',i===current));
+      }
+      function onScroll() {
+        if (!ticking) {ticking = true; requestAnimationFrame(update);}
+      }
+      window.addEventListener('scroll',onScroll,{passive:true});
+      window.addEventListener('resize',measure,{passive:true});
+      compact.addEventListener('change',measure);
+      window.addEventListener('load',measure,{once:true});
+      // Font/layout shifts affect the scroll distance; react without observing the section height itself.
+      if ('ResizeObserver' in window) new ResizeObserver(() => requestAnimationFrame(measure)).observe(track);
+      measure();
+    }
+  }
+</script>

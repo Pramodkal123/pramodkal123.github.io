@@ -1,6 +1,71 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/about.css';
+const values = [
+  {number:'01',title:'Accountability',copy:'Taking responsibility for decisions, commitments and the quality of our work.'},
+  {number:'02',title:'Craftsmanship',copy:'An approach shaped by attention to detail and care in execution.'},
+  {number:'03',title:'Collaboration',copy:'Working closely with clients, consultants and project stakeholders.'},
+  {number:'04',title:'Transparency',copy:'Clear communication, straightforward conversations and shared expectations.'}
+];
 ---
-<BaseLayout title="About Vigorous Property | Vigorous Property" description="Meet the team and learn about our approach to residential construction and renovation.">
-  <section class="interior-page"><div class="container"><p class="eyebrow">VIGOROUS PROPERTY</p><h1>Built on detail. Driven by quality.</h1><p>Meet the team and learn about our approach to residential construction and renovation.</p><p class="preview-note">This page is a development placeholder. Its full design will follow the approved homepage.</p><a href="/" class="btn btn-gold">Back to homepage <span aria-hidden="true">→</span></a></div></section>
+<BaseLayout title="About Vigorous Property | The Way We Build" description="Discover the people, principles and professional approach behind Vigorous Property, a London construction company.">
+  <!-- Photography on this page is illustrative, not documentary evidence of company personnel or projects. -->
+  <section class="vp-about-hero" aria-labelledby="vp-about-title">
+    <div class="vp-about-hero-photo" role="img" aria-label="Illustrative photograph of construction work in progress"></div>
+    <div class="vp-about-hero-shade"></div>
+    <div class="container vp-about-hero-inner">
+      <p class="eyebrow vp-about-hero-kicker">ABOUT VIGOROUS PROPERTY</p>
+      <h1 id="vp-about-title"><span>THE WAY</span><span>WE <em>BUILD.</em></span></h1>
+      <span class="vp-about-hero-line" aria-hidden="true"></span>
+      <p class="vp-about-hero-lead">The people, principles and commitment behind our work.</p>
+    </div>
+    <a class="vp-about-scroll" href="#vp-about-story-heading" aria-label="Discover our story">DISCOVER OUR STORY <span aria-hidden="true">↓</span></a>
+  </section>
+
+  <section class="vp-about-story vp-about-section" aria-labelledby="vp-about-story-heading">
+    <div class="container vp-about-story-grid">
+      <div data-reveal>
+        <p class="eyebrow">OUR STORY</p>
+        <h2 id="vp-about-story-heading">A CONSTRUCTION COMPANY BUILT ON <span>PEOPLE, QUALITY AND TRUST.</span></h2>
+      </div>
+      <div class="vp-about-story-aside" data-reveal>
+        <p class="vp-about-large-copy">Good construction begins with the right approach.</p>
+        <p>At Vigorous Property, our ambition is to deliver work with care, professional coordination and a clear sense of responsibility. We believe successful projects depend as much on the people and decisions behind the work as on the finished result.</p>
+        <p>Our approach puts thoughtful planning, open communication and quality workmanship at the centre of every project.</p>
+        <small class="vp-about-editorial-note">Proposed company narrative — subject to client approval.</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="vp-about-values vp-about-section" aria-labelledby="vp-about-values-heading">
+    <div class="container">
+      <div class="vp-about-values-intro" data-reveal><p class="eyebrow">OUR VALUES</p><h2 id="vp-about-values-heading">WHAT DRIVES US.</h2><p>Four principles proposed to guide how we work and how we build relationships.</p></div>
+      <div class="vp-about-values-grid">
+        {values.map(value => <article class="vp-about-value" data-reveal><span class="vp-about-value-number">{value.number}</span><h3>{value.title}</h3><p>{value.copy}</p></article>)}
+      </div>
+      <p class="vp-about-footnote">Proposed brand values — pending client approval.</p>
+    </div>
+  </section>
+
+  <section class="vp-about-people" aria-labelledby="vp-about-people-heading">
+    <div class="vp-about-people-photo" role="img" aria-label="Illustrative image of construction planning and collaboration"></div>
+    <div class="vp-about-people-overlay"></div>
+    <div class="container vp-about-people-inner" data-reveal>
+      <p class="eyebrow">OUR PEOPLE</p>
+      <h2 id="vp-about-people-heading">THE PEOPLE<br/>BEHIND <span>EVERY PROJECT.</span></h2>
+      <p>Construction is a collective effort. Experience, coordination and shared responsibility shape the way a project moves from its first conversations to the final details.</p>
+      <p class="vp-about-image-disclaimer">Illustrative photography — genuine team images to be supplied.</p>
+    </div>
+  </section>
+
+  <section class="vp-about-leadership vp-about-section" aria-labelledby="vp-about-leadership-heading">
+    <div class="container vp-about-leadership-grid">
+      <div class="vp-about-leadership-image" data-reveal="image"><img src="/images/process/process-plan.webp" alt="Illustrative construction planning materials" loading="lazy" width="900" height="1100"/><span>LEADERSHIP &amp; RESPONSIBILITY</span></div>
+      <div class="vp-about-leadership-copy" data-reveal><p class="eyebrow">LEADERSHIP</p><h2 id="vp-about-leadership-heading">A HANDS-ON<br/><span>APPROACH.</span></h2><p>Strong leadership means staying close to the work, communicating clearly and taking responsibility for the decisions that shape each project.</p><div class="vp-about-pending"><strong>Client information required</strong><p>Verified leadership names, roles, biographies and authentic photographs will be added here when supplied. No team identities are assumed.</p></div></div>
+    </div>
+  </section>
+
+  <section class="vp-about-journey vp-about-section" aria-labelledby="vp-about-journey-heading"><div class="container vp-about-journey-grid"><div data-reveal><p class="eyebrow">OUR COMPANY JOURNEY</p><h2 id="vp-about-journey-heading">BUILDING FOR<br/><span>THE LONG TERM.</span></h2></div><div data-reveal><p>We are focused on building a construction business recognised for dependable delivery, professional relationships and lasting quality.</p><p>Our company story will be developed with verified founding, ownership and milestone information from the Vigorous Property team.</p><div class="vp-about-pending"><strong>Client information required</strong><p>Founding story, ownership background, meaningful company milestones and authentic historical imagery. No dates or achievements have been invented.</p></div></div></div></section>
+
+  <section class="vp-about-future" aria-labelledby="vp-about-future-heading"><div class="vp-about-future-photo" role="img" aria-label="Illustrative view of an active London construction project"></div><div class="vp-about-future-overlay"></div><div class="container vp-about-future-content" data-reveal><p class="eyebrow">LOOKING AHEAD</p><h2 id="vp-about-future-heading">A STRONGER,<br/><span>MORE CAPABLE FUTURE.</span></h2><p>Continuing to improve, grow our capabilities and approach every opportunity with the care and professionalism it deserves.</p><a class="vp-hero-button vp-hero-button-primary" href="/contact/">GET IN TOUCH <span aria-hidden="true">↗</span></a></div></section>
 </BaseLayout>
